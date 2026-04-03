@@ -1,32 +1,61 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const designers = [
+import Image from "next/image";
+import { useState } from "react";
+import {
+  DesignerProfileModal,
+  type DesignerProfileDetail,
+} from "@/components/DesignerProfileModal";
+
+const designers: DesignerProfileDetail[] = [
   {
     name: "Reymond Cruz",
     image: "/images/Profile 1.jpg",
     occupation: "Graphic Designer",
     skills: ["Canva AI", "Adobe Firefly"],
+    achievements: [
+      "Led brand refresh projects for two campus organizations",
+      "Honorable mention in a national student poster competition",
+      "Regular contributor to peer design critiques and workshops",
+    ],
   },
   {
     name: "Steven Castro",
     image: "/images/Profile 2.jpg",
     occupation: "Graphic Designer",
     skills: ["Canva AI", "Adobe Firefly"],
+    achievements: [
+      "Awarded 'Best Visual Concept' in a student design showcase",
+      "Recognized for outstanding use of AI-assisted workflows",
+      "Featured in two online design community spotlights",
+    ],
   },
   {
     name: "Athena Perez",
     image: "/images/Profile 3.jpg",
     occupation: "Graphic Designer",
     skills: ["Canva AI", "Adobe Firefly"],
+    achievements: [
+      "Published work in a regional emerging designers gallery",
+      "Mentored first-year students on layout and typography basics",
+      "Shortlisted for a collaborative UI concept challenge",
+    ],
   },
 ];
 
 export function FeaturedDesigners() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const openProfile = (index: number) => {
+    setSelectedIndex(index);
+    setModalOpen(true);
+  };
+
   return (
     <section className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16">
       <div className="mx-auto max-w-6xl">
-      <h2
+        <h2
           className="text-center font-display font-normal leading-tight"
           style={{
             fontSize: "55px",
@@ -38,13 +67,13 @@ export function FeaturedDesigners() {
         >
           Featured Designers
         </h2>
-        <p className="mt-2 text-center font-sans max-w-1xl text-[20px] font-medium leading-normal text-[#333333]">
+        <p className="mt-2 max-w-1xl text-center font-sans text-[20px] font-medium leading-normal text-[#333333]">
           Meet the creatives shaping tomorrow&apos;s visual culture and making
           waves in the industry.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {designers.map((designer) => (
+          {designers.map((designer, index) => (
             <article
               key={designer.name}
               className="group overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.14)]"
@@ -78,17 +107,25 @@ export function FeaturedDesigners() {
                   ))}
                 </div>
 
-                <Link
-                  href="/profiles"
+                <button
+                  type="button"
+                  onClick={() => openProfile(index)}
                   className="mt-5 inline-flex items-center justify-center rounded-lg border border-[#DDDDDD] bg-white px-6 py-2.5 font-sans text-[0.875rem] font-medium text-[#333333] shadow-sm transition-all duration-200 hover:scale-[1.02] hover:border-[#FF9114]/40 hover:bg-[#FF9114]/10 hover:text-[#FF9114]"
                 >
                   View Works
-                </Link>
+                </button>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      <DesignerProfileModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        designers={designers}
+        initialIndex={selectedIndex}
+      />
     </section>
   );
 }
