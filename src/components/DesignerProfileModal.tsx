@@ -16,32 +16,43 @@ export type DesignerProfileDetail = {
   occupation: string;
   skills: string[];
   achievements: string[];
+  outputItems: DesignerOutputItem[];
+  processParagraphs: string[];
 };
 
-const DEFAULT_PROFICIENCY = [
-  { src: "/images/canva.png", alt: "Canva" },
-  { src: "/images/photoshop.png", alt: "Adobe Photoshop" },
+type DesignerOutputItem = {
+  title: string;
+  description: string;
+  result: string;
+  image?: string;
+  imageAlt?: string;
+};
+
+const DEFAULT_OUTPUT_ITEMS: DesignerOutputItem[] = [
+  {
+    title: "Brand Identity Sprint",
+    description:
+      "Created a visual system with logo directions, color palettes, and social templates.",
+    result: "Delivered a client-ready toolkit in four days.",
+  },
+  {
+    title: "Campus Event Campaign",
+    description:
+      "Designed posters, digital signages, and announcement assets for a multi-day event.",
+    result: "Improved event sign-ups through consistent visuals.",
+  },
+  {
+    title: "Product Launch Creatives",
+    description:
+      "Produced launch graphics and ad variants tailored for web and mobile placements.",
+    result: "Increased click-through performance after A/B testing.",
+  },
 ];
 
-const OUTPUT_SLIDES = [
-  {
-    src: "/images/artfusionexhibit.png",
-    alt: "Artfusion Exhibit poster, March 15–16 2025",
-  },
-  {
-    src: "/images/grants-chips.png",
-    alt: "Grantz Chips promotional poster",
-  },
-  {
-    src: "/images/logitech.png",
-    alt: "Logitech Pebble M350 mouse poster",
-  },
-] as const;
-
-const PROCESS_PARAGRAPHS = [
-  "In my workflow as a graphic designer, I use AI mainly as a support tool to speed up parts of the design process. When starting a project, I review the client brief and sometimes use AI to help gather references and visual inspirations so I can quickly understand the direction of the design.",
-  "During the ideation stage, I use AI for brainstorming, such as exploring possible color palettes, typography pairings, or style references. Once I have a concept in mind, I move into the design phase using tools like Adobe Illustrator, Adobe Photoshop, or Figma, where I create and refine the actual design.",
-  "AI features also help automate small tasks like background removal or generating quick variations, which makes the workflow more efficient. In the end, I still review and finalize everything myself to ensure the design meets the project requirements.",
+const DEFAULT_PROCESS_PARAGRAPHS = [
+  "I begin by translating the brief into a clear design goal, target mood, and practical visual constraints.",
+  "After concept exploration, I narrow to a few strong directions, validate readability, and refine hierarchy.",
+  "Before handoff, I package reusable assets and document design decisions so implementation stays consistent.",
 ];
 
 type MainTab = 0 | 1 | 2;
@@ -68,7 +79,7 @@ export function DesignerProfileModal({
 }: DesignerProfileModalProps) {
   const [designerIndex, setDesignerIndex] = useState(initialIndex);
   const [mainTab, setMainTab] = useState<MainTab>(0);
-  const [outputSlide, setOutputSlide] = useState(1);
+  const [outputSlide, setOutputSlide] = useState(0);
 
   const handleClose = useCallback(() => {
     onClose();
@@ -78,7 +89,7 @@ export function DesignerProfileModal({
     if (isOpen) {
       setDesignerIndex(initialIndex);
       setMainTab(0);
-      setOutputSlide(1);
+      setOutputSlide(0);
     }
   }, [isOpen, initialIndex]);
 
@@ -100,8 +111,14 @@ export function DesignerProfileModal({
 
   const designer = designers[designerIndex] ?? designers[0];
   const modalTitleId = "designer-profile-modal-title";
+  const outputItems =
+    designer.outputItems.length > 0 ? designer.outputItems : DEFAULT_OUTPUT_ITEMS;
+  const processParagraphs =
+    designer.processParagraphs.length > 0
+      ? designer.processParagraphs
+      : DEFAULT_PROCESS_PARAGRAPHS;
 
-  const nOut = OUTPUT_SLIDES.length;
+  const nOut = outputItems.length;
   const leftIdx = (outputSlide - 1 + nOut) % nOut;
   const rightIdx = (outputSlide + 1) % nOut;
 
@@ -195,27 +212,21 @@ export function DesignerProfileModal({
                       </ul>
                     </div>
 
-                    <div className="flex shrink-0 flex-row items-center justify-between gap-4">
+                    <div className="flex shrink-0 flex-col items-start gap-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                       <h3
                         className="font-sans text-lg font-bold leading-snug md:text-xl"
                         style={GRADIENT_TEXT_STYLE}
                       >
                         Proficiency
                       </h3>
-                      <div className="flex shrink-0 items-center gap-2.5">
-                        {DEFAULT_PROFICIENCY.map((icon) => (
-                          <div
-                            key={icon.src}
-                            className="relative h-10 w-10 overflow-hidden rounded-full bg-white shadow-[0_1px_4px_rgba(0,0,0,0.12)] ring-1 ring-black/5 sm:h-11 sm:w-11"
+                      <div className="flex w-full min-w-0 flex-wrap items-center justify-start gap-2 sm:w-auto sm:justify-end">
+                        {designer.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="rounded-full bg-[#FFC107] px-3 py-1 font-sans text-xs font-semibold text-white shadow-sm sm:text-[0.8125rem]"
                           >
-                            <Image
-                              src={icon.src}
-                              alt={icon.alt}
-                              fill
-                              className="object-cover"
-                              sizes="44px"
-                            />
-                          </div>
+                            {skill}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -278,8 +289,9 @@ export function DesignerProfileModal({
                       { index: outputSlide, role: "center" as const },
                       { index: rightIdx, role: "side" as const },
                     ].map(({ index, role }) => {
-                      const slide = OUTPUT_SLIDES[index];
+                      const slide = outputItems[index];
                       const isCenter = role === "center";
+                      const hasImage = Boolean(slide.image);
                       return (
                         <div
                           key={`${index}-${role}-${outputSlide}`}
@@ -292,19 +304,71 @@ export function DesignerProfileModal({
                           <div
                             className={`relative w-full overflow-hidden rounded-md bg-white sm:rounded-lg ${
                               isCenter
-                                ? "shadow-[0_14px_32px_rgba(0,0,0,0.22)]"
-                                : "shadow-[0_8px_20px_rgba(0,0,0,0.14)]"
+                                ? `${
+                                    hasImage ? "p-0" : "p-4 sm:p-5"
+                                  } shadow-[0_14px_32px_rgba(0,0,0,0.22)]`
+                                : `${
+                                    hasImage ? "p-0" : "p-2.5 sm:p-3"
+                                  } shadow-[0_8px_20px_rgba(0,0,0,0.14)]`
                             }`}
                             style={{ aspectRatio: "3 / 4" }}
                           >
-                            <Image
-                              src={slide.src}
-                              alt={slide.alt}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 640px) 28vw, 240px"
-                              priority={isCenter}
-                            />
+                            {hasImage ? (
+                              <div className="relative h-full w-full">
+                                <Image
+                                  src={slide.image ?? ""}
+                                  alt={
+                                    slide.imageAlt ??
+                                    `${designer.name} output: ${slide.title}`
+                                  }
+                                  fill
+                                  className="object-cover"
+                                  sizes="(max-width: 640px) 28vw, 240px"
+                                  priority={isCenter}
+                                />
+                                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 via-black/35 to-transparent p-2.5 sm:p-3">
+                                  <p
+                                    className={`font-sans font-semibold text-white ${
+                                      isCenter
+                                        ? "text-[0.7rem] sm:text-[0.8125rem]"
+                                        : "text-[0.5rem] sm:text-[0.5625rem]"
+                                    }`}
+                                  >
+                                    {slide.title}
+                                  </p>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex h-full flex-col rounded-md border border-[#EFEFEF] bg-[#FAFAFA] p-2.5 text-left sm:p-3">
+                                <p
+                                  className={`font-sans font-bold leading-tight text-black ${
+                                    isCenter
+                                      ? "text-sm sm:text-base"
+                                      : "text-[0.625rem] sm:text-[0.6875rem]"
+                                  }`}
+                                >
+                                  {slide.title}
+                                </p>
+                                <p
+                                  className={`mt-2 font-sans text-[#444444] ${
+                                    isCenter
+                                      ? "text-[0.75rem] leading-[1.45] sm:text-[0.8125rem]"
+                                      : "text-[0.5625rem] leading-[1.35] sm:text-[0.625rem]"
+                                  }`}
+                                >
+                                  {slide.description}
+                                </p>
+                                <p
+                                  className={`mt-auto pt-2 font-sans font-semibold text-[#FF9114] ${
+                                    isCenter
+                                      ? "text-[0.6875rem] sm:text-[0.75rem]"
+                                      : "text-[0.5rem] sm:text-[0.5625rem]"
+                                  }`}
+                                >
+                                  {slide.result}
+                                </p>
+                              </div>
+                            )}
                           </div>
                         </div>
                       );
@@ -320,7 +384,7 @@ export function DesignerProfileModal({
                   PROCESS
                 </h2>
                 <div className="mx-auto w-full max-w-xl flex-1 space-y-3 sm:max-w-xl sm:space-y-4">
-                  {PROCESS_PARAGRAPHS.map((text, i) => (
+                  {processParagraphs.map((text, i) => (
                     <p
                       key={i}
                       className="font-sans text-[0.8125rem] leading-[1.65] text-black sm:text-[0.875rem] sm:leading-[1.7] md:text-[0.9375rem]"
