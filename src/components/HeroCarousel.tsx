@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { Header } from "./Header";
 
@@ -63,7 +62,7 @@ export function HeroCarousel() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 pb-20 md:px-12 lg:max-w-3xl lg:px-16">
+          <div className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 pb-20 md:px-12 lg:max-w-6xl lg:px-40">
             <h1 className="font-display text-4xl font-normal leading-tight text-white md:text-5xl lg:text-6xl">
               {slide.headline.map((line, i) => (
                 <span key={i} className="block">
@@ -74,17 +73,21 @@ export function HeroCarousel() {
             <p className="mt-6 max-w-xl font-sans text-lg text-white/95 md:text-xl">
               {slide.subheadline}
             </p>
-            <Link
-              href="/#about"
+            <a
+              href="/#featured-designers"
               className="mt-8 inline-flex w-fit items-center justify-center rounded-2xl px-8 py-4 font-sans text-base font-bold text-black transition hover:opacity-95"
+              onClick={(event) => {
+                event.preventDefault();
+                window.location.assign("/#featured-designers");
+              }}
               style={{
                 background: "linear-gradient(to right, #F6D26D 0%, #FF9114 100%)",
                 boxShadow:
                   "0 6px 12px -2px rgba(0,0,0,0.35), 0 12px 24px -6px rgba(0,0,0,0.5)",
               }}
             >
-              Learn More
-            </Link>
+              Featured Artists
+            </a>
           </div>
         </div>
       ))}

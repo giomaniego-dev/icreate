@@ -9,10 +9,10 @@ import {
 
 const designers: DesignerProfileDetail[] = [
   {
-    name: "Joshua Erries Dingalsan",
-    image: "/images/joshua.png",
+    name: "Reymond Cruz",
+    image: "/images/Profile 1.jpg",
     occupation: "Graphic Designer",
-    skills: ["Canva AI", "Photoshop", "Typography"],
+    skills: ["Canva AI", "Adobe Firefly"],
     achievements: [
       "Led brand refresh projects for two campus organizations",
       "Honorable mention in a national student poster competition",
@@ -51,7 +51,7 @@ const designers: DesignerProfileDetail[] = [
     name: "Deither Castro",
     image: "/images/diether.png",
     occupation: "Graphic Designer",
-    skills: ["Adobe Firefly", "Brand Systems"],
+    skills: ["Canva AI", "Adobe Firefly"],
     achievements: [
       "Awarded 'Best Visual Concept' in a student design showcase",
       "Recognized for outstanding use of AI-assisted workflows",
@@ -87,10 +87,10 @@ const designers: DesignerProfileDetail[] = [
     ],
   },
   {
-    name: "Athena Perez",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Joshua Erries Dingalsan",
+    image: "/images/joshua.png",
     occupation: "Graphic Designer",
-    skills: ["Figma", "Editorial Layout", "Art Direction"],
+    skills: ["Canva AI", "Adobe Firefly"],
     achievements: [
       "Published work in a regional emerging designers gallery",
       "Mentored first-year students on layout and typography basics",
@@ -124,167 +124,15 @@ const designers: DesignerProfileDetail[] = [
       "At handoff, I include annotations for hierarchy and tone so collaborators can preserve intent.",
     ],
   },
-  {
-    name: "Luna Villanueva",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-    occupation: "Brand Designer",
-    skills: ["Brand Strategy", "Illustrator", "Packaging"],
-    achievements: [
-      "Built a visual identity system used by three startup launches",
-      "Won first place in a local packaging design sprint",
-      "Created social kits that raised engagement by 38% for clients",
-    ],
-    outputItems: [
-      {
-        title: "Wellness Brand Identity",
-        description:
-          "Developed naming visuals, iconography, and a flexible logo suite for product extensions.",
-        result: "Enabled smooth rollout from online store to retail displays.",
-        image: "https://randomuser.me/api/portraits/women/68.jpg",
-        imageAlt: "Luna brand identity output",
-      },
-      {
-        title: "Seasonal Packaging Edition",
-        description:
-          "Designed limited-run box concepts with print-ready dielines and material notes.",
-        result: "Sold out first production batch ahead of schedule.",
-      },
-      {
-        title: "Social Launch Toolkit",
-        description:
-          "Created branded post templates, stories, and ad layouts aligned with campaign phases.",
-        result: "Grew campaign engagement through consistent visual messaging.",
-      },
-    ],
-    processParagraphs: [
-      "I begin with positioning and tone so every visual element reflects the brand promise clearly.",
-      "After concept approval, I stress-test the system across packaging, social, and web use cases.",
-      "I finalize with a concise brand guide that keeps future outputs aligned and scalable.",
-    ],
-  },
-  {
-    name: "Noah Bautista",
-    image: "https://randomuser.me/api/portraits/men/71.jpg",
-    occupation: "UI Designer",
-    skills: ["UI Systems", "Accessibility", "Figma"],
-    achievements: [
-      "Designed mobile-first interfaces for two nonprofit platforms",
-      "Recognized for accessible color systems in student hackathons",
-      "Co-led design QA workshops focused on consistency and UX polish",
-    ],
-    outputItems: [
-      {
-        title: "Volunteer Platform UI Kit",
-        description:
-          "Built reusable components and interaction states for onboarding and task tracking screens.",
-        result: "Reduced design inconsistencies during frontend implementation.",
-        image: "https://randomuser.me/api/portraits/men/71.jpg",
-        imageAlt: "Noah UI kit output",
-      },
-      {
-        title: "Donation Flow Redesign",
-        description:
-          "Simplified checkout steps with clearer hierarchy and trust indicators.",
-        result: "Improved completion rates in user testing sessions.",
-      },
-      {
-        title: "Accessibility Audit Visual Fixes",
-        description:
-          "Refined color contrast, focus states, and typography scaling across core pages.",
-        result: "Raised interface clarity for keyboard and low-vision users.",
-      },
-    ],
-    processParagraphs: [
-      "I map user goals to interface states early so the flow stays intuitive even before visual polish.",
-      "Then I iterate on components with accessibility checks baked into spacing, contrast, and interaction patterns.",
-      "Before handoff, I document edge cases and state behavior to reduce QA friction.",
-    ],
-  },
-  {
-    name: "Kiara Domingo",
-    image: "https://randomuser.me/api/portraits/women/21.jpg",
-    occupation: "Visual Designer",
-    skills: ["Illustration", "Social Campaigns", "Color Design"],
-    achievements: [
-      "Published an editorial illustration series with over 20k views",
-      "Delivered campaign assets for a multi-school creative festival",
-      "Known for fast AI-augmented concept exploration and iteration",
-    ],
-    outputItems: [
-      {
-        title: "Festival Visual Identity",
-        description:
-          "Illustrated key art and adaptation sets for teaser posts, posters, and stage screens.",
-        result: "Unified campaign look across multiple school partners.",
-        image: "https://randomuser.me/api/portraits/women/21.jpg",
-        imageAlt: "Kiara festival visual output",
-      },
-      {
-        title: "Editorial Illustration Set",
-        description:
-          "Produced story-led artwork that paired with feature articles and social snippets.",
-        result: "Expanded audience reach through highly shareable visuals.",
-      },
-      {
-        title: "Campaign Motion Frames",
-        description:
-          "Designed frame-by-frame assets that motion teammates could animate quickly.",
-        result: "Shortened production turnaround for weekly campaign drops.",
-      },
-    ],
-    processParagraphs: [
-      "I gather references around emotion and texture first, then define a palette that carries the campaign tone.",
-      "Sketching comes next: I test composition extremes before choosing the strongest direction.",
-      "I finish with clean layered files so collaborators can repurpose assets without rebuilding from scratch.",
-    ],
-  },
-  {
-    name: "Ethan Navarro",
-    image: "https://randomuser.me/api/portraits/men/83.jpg",
-    occupation: "Motion Designer",
-    skills: ["Motion Graphics", "Storyboarding", "After Effects"],
-    achievements: [
-      "Produced animated product stories for campus entrepreneur teams",
-      "Finalist in a digital storytelling challenge for young creatives",
-      "Introduced reusable design templates that cut production time",
-    ],
-    outputItems: [
-      {
-        title: "Explainer Video Storyboards",
-        description:
-          "Developed shot sequences and visual cues for a short product onboarding animation.",
-        result: "Improved clarity of feature communication for first-time users.",
-        image: "https://randomuser.me/api/portraits/men/83.jpg",
-        imageAlt: "Ethan storyboard output",
-      },
-      {
-        title: "Launch Reel Graphics",
-        description:
-          "Created animated title cards, transitions, and CTA end frames for social release.",
-        result: "Delivered a polished campaign reel under tight timelines.",
-      },
-      {
-        title: "Template Motion Library",
-        description:
-          "Built reusable intro/outro and lower-third animations for recurring content series.",
-        result: "Reduced editing effort across weekly production cycles.",
-      },
-    ],
-    processParagraphs: [
-      "I break scripts into scene beats and timing blocks so pacing decisions are intentional from day one.",
-      "After styleframes are approved, I animate core moments first to validate motion language and rhythm.",
-      "Final export includes organized project files and presets that make future revisions fast.",
-    ],
-  },
 ];
 
 export function FeaturedDesigners() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [cardsPerView, setCardsPerView] = useState(3);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const updateCardsPerView = () => {
       if (window.innerWidth < 640) {
         setCardsPerView(1);
@@ -320,14 +168,14 @@ export function FeaturedDesigners() {
     }, 4500);
 
     return () => window.clearInterval(timer);
-  }, [maxSlide]);
+  }, [maxSlide]);*/
 
   const openProfile = (index: number) => {
     setSelectedIndex(index);
     setModalOpen(true);
   };
 
-  const goPrev = () => {
+  /*const goPrev = () => {
     setCurrentSlide((previous) => (previous <= 0 ? maxSlide : previous - 1));
   };
 
@@ -335,10 +183,10 @@ export function FeaturedDesigners() {
     setCurrentSlide((previous) => (previous >= maxSlide ? 0 : previous + 1));
   };
 
-  const totalSlides = maxSlide + 1;
+  const totalSlides = maxSlide + 1;*/
 
   return (
-    <section className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16">
+    <section className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16" id="featured-designers">
       <div className="mx-auto max-w-6xl">
         <h2
           className="text-center font-display font-normal leading-tight"
@@ -363,7 +211,7 @@ export function FeaturedDesigners() {
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{
-                  transform: `translateX(-${(currentSlide * 100) / cardsPerView}%)`,
+                  //transform: `translateX(-${(currentSlide * 100) / cardsPerView}%)`,
                 }}
               >
                 {designers.map((designer, index) => (
@@ -415,9 +263,9 @@ export function FeaturedDesigners() {
               </div>
             </div>
 
-            <button
+            {/* <button
               type="button"
-              onClick={goPrev}
+              //onClick={goPrev}
               aria-label="Show previous designer"
               className="absolute -left-2 top-1/2 z-10 hidden -translate-x-full -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/95 p-3 text-[#2E2E2E] shadow-[0_10px_24px_rgba(0,0,0,0.16)] ring-1 ring-black/5 backdrop-blur transition-all duration-200 hover:scale-105 hover:bg-white hover:text-[#FF9114] hover:shadow-[0_14px_30px_rgba(0,0,0,0.2)] sm:inline-flex"
             >
@@ -452,10 +300,10 @@ export function FeaturedDesigners() {
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
-            </button>
+            </button> */}
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-2">
+          {/*<div className="mt-6 flex items-center justify-center gap-2">
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
               <button
                 key={slideIndex}
@@ -467,7 +315,7 @@ export function FeaturedDesigners() {
                 }`}
               />
             ))}
-          </div>
+          </div>*/}
         </div>
       </div>
 
