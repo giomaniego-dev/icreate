@@ -16,15 +16,12 @@ export function QuizBanner() {
       >
         <div
           className="flex shrink-0 items-center justify-center overflow-hidden rounded-xl p-5 md:p-6 lg:p-8"
-          style={{
-            background: "linear-gradient(135deg, #FFC107 0%, #FFD700 100%)",
-          }}
         >
           <Image
             src="/images/robot.svg"
             alt=""
-            width={220}
-            height={171}
+            width={420}
+            height={271}
             className="h-32 w-auto md:h-40 lg:h-48"
           />
         </div>

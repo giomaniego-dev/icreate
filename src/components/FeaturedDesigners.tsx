@@ -9,14 +9,107 @@ import {
 
 const designers: DesignerProfileDetail[] = [
   {
-    name: "Reymond Cruz",
-    image: "/images/Profile 1.jpg",
+    name: "Michael Aligan",
+    image: "/images/michael.png",
     occupation: "Graphic Designer",
-    skills: ["Canva AI", "Adobe Firefly"],
-    achievements: [
-      "Led brand refresh projects for two campus organizations",
-      "Honorable mention in a national student poster competition",
-      "Regular contributor to peer design critiques and workshops",
+    tags: ["Canva AI", "Topaz Photo Ai"],
+    about:
+      "Michael Aligan is a 38-year-old freelance designer and illustrator with six years of experience. He uses AI as a time-saving tool to stay competitive but insists that human fundamentals must drive the creative process. While he embraces AI for efficiency, he remains wary of how it allows others to bypass the hard work of learning traditional skills.",
+    skills: [
+      "Design & AI Tech: Expert in photo retouching and layout design using Adobe Photoshop, specializing in daily AI upscaling with Topaz Photo AI to restore low-quality images.",
+      "Creative Support: Uses AI for rapid idea generation and moodboarding while utilizing ChatGPT to handle professional administrative tasks like drafting cover letters.",
+    ],
+    experiences: [
+      "Freelance Graphic Designer (Current): Manages a high-volume workflow for a Canadian T-shirt business, where he cleans, retouches, and upscales customer images to create print-ready designs.",
+      "Small Local Business Designer (Past): Gained essential industry experience working for local companies before pivoting to international freelance work for better pay and flexibility.",
+    ],
+    outputItems: [
+      {
+        title: "Admission Week Visual Pack",
+        description:
+          "Designed directional posters and digital banners for incoming student orientation.",
+        result: "Improved on-site wayfinding and reduced confusion at key booths.",
+        image: "/images/mi-1.png",
+      },
+      {
+        title: "Portfolio Poster Series",
+        description:
+          "Created a three-poster narrative showcasing process sketches, layouts, and final executions.",
+        result: "Selected for exhibition in the department showcase.",
+        image: "/images/mi-2.png",
+      },
+      {
+        title: "Portfolio Poster Series",
+        description:
+          "Created a three-poster narrative showcasing process sketches, layouts, and final executions.",
+        result: "Selected for exhibition in the department showcase.",
+        image: "/images/mi-3.png",
+      },
+    ],
+    processParagraphs: [
+      `Michael Aligan is a freelance graphic designer who uses his six years of experience to balance artistic skill with modern technology. His primary process involves taking low-quality or blurry images provided by clients—specifically for t-shirt printing—and running them through AI upscaling software like Topaz Photo AI to make them sharp and clear. Instead of simply accepting what the computer generates, he manually controls the results by adjusting how much the AI modifies the original image, ensuring it doesn't look unnatural. Once the technical cleanup is finished, he takes over the creative side by manually arranging the images into a custom design layout, which is where his human judgment and understanding of design basics come into play. He also uses AI for his personal passion projects to brainstorm new ideas or create "mood boards" for inspiration when he feels stuck. By using these tools as a "high-speed engine" while he remains the "driver," Michael has managed to shorten his work time from an entire day down to just 15 to 30 minutes, giving him a competitive edge while maintaining the high standards of a professional artist.`
+    ],
+  },
+  {
+    name: "Jean Michelle Occeña",
+    image: "/images/jean.png",
+    occupation: "Graphic Designer",
+    tags: ["Freepik", "Adobe Firefly"],
+    about:
+      "Jean is a seasoned Multimedia Specialist with 10 years of experience blending technical IT foundations with the visual arts. She specializes in AI-integrated workflows, treating AI as a 'co-creator' to drive efficiency and brainstorming under tight deadlines. By combining professional design expertise with modern tools, she ensures every project is both strategically executed and human-refined.",
+    skills: [
+      "Creative Design: Expert in graphic design, storyboarding, and conceptualizing commercial visuals.",
+      "Multimedia Production: Proficient in video editing, GIF creation, and foundational HTML/CSS.",
+      "Strategic Optimization: Skilled at using AI to solve resource constraints and accelerate brainstorming under tight deadlines.",
+    ],
+    experiences: [
+      "10-Year Creative Career: A seasoned Multimedia Specialist active in the industry since 2016.", 
+      "Agency Expertise: Extensive experience in fast-paced advertising, managing commercial accounts and high-pressure pitches.",
+      "Multimedia Evolution: Progressed from foundational web customization (HTML/CSS) to expert-level graphic design and video production.",
+    ],
+    outputItems: [
+      {
+        title: "Cafe Launch Identity",
+        description:
+          "Produced logo lockups, menu boards, and promo cards with a warm handcrafted aesthetic.",
+        result: "Brand assets rolled out in-store and on delivery apps.",
+        image: "/images/jean-1.png",
+      },
+      {
+        title: "Social Content Sprint",
+        description:
+          "Generated a monthly batch of campaign creatives with reusable composition rules.",
+        result: "Cut content production time while keeping visuals on-brand.",
+        image: "/images/jean-2.png",
+      },
+      {
+        title: "Social Content Sprint",
+        description:
+          "Generated a monthly batch of campaign creatives with reusable composition rules.",
+        result: "Cut content production time while keeping visuals on-brand.",
+        image: "/images/jean-3.png",
+      },
+    ],
+    processParagraphs: [
+      "Jean integrates AI into her workflow as a collaborative 'co-creator,' using Adobe Firefly 2024 to bridge the gap between abstract concepts and professional execution. Her process begins by uploading specific image references to guide the AI in generating tailored environments or storyboards, ensuring the output aligns with her intended composition and mood. To meet professional standards, she then moves the generated work into Adobe Photoshop to perform detailed manual polishing, where she corrects technical impurities, artifacts, or glitches inherent in AI results. Finally, she seamlessly blends real-world product assets into these refined AI backgrounds, meticulously adjusting lighting and shadows to create a cohesive, unified scene that maintains her artistic originality while significantly accelerating the production timeline."
+    ],
+  },
+  {
+    name: "Joshua Erries Dingalsan",
+    image: "/images/joshua.png",
+    occupation: "Graphic Designer",
+    tags: ["Midjourney", "Adobe Firefly"],
+    about:
+      "Joshua Erries C. Dinglasan is a 28-year-old Professional Graphic Designer with over a decade of experience, ranging from freelance projects started in 2014 to high-level agency work with firms like VivaMax. After beginning as a self-taught Photoshop enthusiast at age 12, he formalised his passion with a degree in Graphic Design and has since spent 13 years mastering design theories and modern trends to deliver expert visual solutions.",
+    skills: [
+      "Advanced Photo Manipulation: Realistic image blending, lighting matching, and resolution enhancement.",
+      "Digital Design: Creation of professional layouts for posters, book covers, and social media.",
+      "Asset Production: Generating custom character designs and vector elements for commercial use.",
+    ],
+    experiences: [
+      "Agencies: Campaigns for VivaMax and official posters for Rain in España.",
+      "Freelance: Branding and design for small businesses and events since 2014.",
+      "Commercial: Specialist ad layouts for the online gaming and casino sectors.",
     ],
     outputItems: [
       {
@@ -42,86 +135,7 @@ const designers: DesignerProfileDetail[] = [
       },
     ],
     processParagraphs: [
-      "I start by translating the brief into one clear message and a visual mood board that anchors every decision.",
-      "From there I explore multiple layout paths quickly, then pressure-test each one for hierarchy and readability.",
-      "Before final delivery, I create reusable templates and export settings so teams can produce follow-up assets consistently.",
-    ],
-  },
-  {
-    name: "Deither Castro",
-    image: "/images/diether.png",
-    occupation: "Graphic Designer",
-    skills: ["Canva AI", "Adobe Firefly"],
-    achievements: [
-      "Awarded 'Best Visual Concept' in a student design showcase",
-      "Recognized for outstanding use of AI-assisted workflows",
-      "Featured in two online design community spotlights",
-    ],
-    outputItems: [
-      {
-        title: "Cafe Launch Identity",
-        description:
-          "Produced logo lockups, menu boards, and promo cards with a warm handcrafted aesthetic.",
-        result: "Brand assets rolled out in-store and on delivery apps.",
-        image: "/images/sarah.png",
-      },
-      {
-        title: "Social Content Sprint",
-        description:
-          "Generated a monthly batch of campaign creatives with reusable composition rules.",
-        result: "Cut content production time while keeping visuals on-brand.",
-        image: "/images/jillian.png",
-      },
-      {
-        title: "Social Content Sprint",
-        description:
-          "Generated a monthly batch of campaign creatives with reusable composition rules.",
-        result: "Cut content production time while keeping visuals on-brand.",
-        image: "/images/housing.png",
-      },
-    ],
-    processParagraphs: [
-      "My process begins with audience intent: what they should feel, remember, and do after seeing the design.",
-      "I use rapid concept blocks to test shape language and color direction before polishing any one idea too early.",
-      "Once approved, I package files in production-friendly formats so marketing and printing teams can move fast.",
-    ],
-  },
-  {
-    name: "Joshua Erries Dingalsan",
-    image: "/images/joshua.png",
-    occupation: "Graphic Designer",
-    skills: ["Canva AI", "Adobe Firefly"],
-    achievements: [
-      "Published work in a regional emerging designers gallery",
-      "Mentored first-year students on layout and typography basics",
-      "Shortlisted for a collaborative UI concept challenge",
-    ],
-    outputItems: [
-      {
-        title: "Editorial Spread Concept",
-        description:
-          "Designed a long-form magazine layout system balancing typography and image storytelling.",
-        result: "Used as a teaching sample in introductory design classes.",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
-        imageAlt: "Athena editorial concept output",
-      },
-      {
-        title: "Culture Fest Key Visual",
-        description:
-          "Created campaign hero artwork and adaptation rules for posters, tickets, and social posts.",
-        result: "Boosted event visibility across student communities.",
-      },
-      {
-        title: "Portfolio Site UI Refresh",
-        description:
-          "Refined information architecture and visual rhythm for a cleaner browsing experience.",
-        result: "Increased average session time on featured projects.",
-      },
-    ],
-    processParagraphs: [
-      "I define the narrative first, because visual style should support the story instead of overpowering it.",
-      "Then I refine spacing, type scale, and rhythm until content feels effortless to read across breakpoints.",
-      "At handoff, I include annotations for hierarchy and tone so collaborators can preserve intent.",
+      `Erries integrates AI into his workflow as a "symbiotic" partner that handles technical efficiency while he maintains control over the creative direction. His process begins with deep research into the project's purpose such as studying book covers for a series poster and he primarily turns to AI when facing tight deadlines or creative blocks. He uses tools like ChatGPT to brainstorm layout ideas and industry-specific tropes, while utilizing Photoshop’s generative fill to expand backgrounds and Midjourney to create generic assets, like a single athlete for a sports ad. However, he never uses AI to generate a complete design; instead, he manually crops and blends these assets, performing his own "passes" to fix AI errors like distorted hands or mismatched skin tones. By keeping the final layout and decision-making organic, he ensures that the AI handles the "grunt work" while the final product retains a human touch and intentionality.`
     ],
   },
 ];
@@ -239,12 +253,12 @@ export function FeaturedDesigners() {
                         </p>
 
                         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-                          {designer.skills.map((skill) => (
+                          {designer.tags.map((tag) => (
                             <span
-                              key={skill}
+                              key={tag}
                               className="rounded-full bg-[#FFC107] px-4 py-1.5 font-sans text-[0.8125rem] font-medium text-white transition-transform duration-200 group-hover:scale-105"
                             >
-                              {skill}
+                              {tag}
                             </span>
                           ))}
                         </div>

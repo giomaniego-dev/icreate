@@ -25,6 +25,20 @@ const QUIZ_QUESTIONS = [
     options: ["Magic Resize", "Magic Erase", "Text to Image"],
     correctAnswer: "Text to Image",
   },
+  {
+    id: "q4",
+    question:
+      "A client sends you a small, low-resolution photo and asks for a sharp, print-ready version. Which AI tool is best for upscaling and restoring image quality?",
+    options: ["Topaz Photo AI", "Magic Erase", "Background Remover"],
+    correctAnswer: "Topaz Photo AI",
+  },
+  {
+    id: "q5",
+    question:
+      "You want to quickly explore multiple visual concepts and moodboard directions for a new campaign. Which AI tool is best for rapid creative ideation?",
+    options: ["Midjourney", "Magic Resize", "Spell Check"],
+    correctAnswer: "Midjourney",
+  },
 ];
 
 type QuizStep = "banner" | "intro" | "quiz" | "complete";
@@ -159,18 +173,12 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
           >
             <div
               className="animate-banner-scale-in flex shrink-0 items-center justify-center overflow-hidden rounded-2xl p-6 md:p-8"
-              style={{
-                background:
-                  "linear-gradient(135deg, #F6D26D 0%, #FF9114 100%)",
-                boxShadow:
-                  "0 12px 40px -8px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
-              }}
             >
               <Image
                 src="/images/robot.svg"
                 alt=""
-                width={140}
-                height={109}
+                width={280}
+                height={180}
                 className="h-28 w-auto md:h-36"
               />
             </div>
