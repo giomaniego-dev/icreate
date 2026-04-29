@@ -95,7 +95,7 @@ const designers: DesignerProfileDetail[] = [
     ],
   },
   {
-    name: "Joshua Erries Dingalsan",
+    name: "Joshua Erries Dinglasan",
     image: "/images/joshua.png",
     occupation: "Graphic Designer",
     tags: ["Midjourney", "Adobe Firefly"],
@@ -214,9 +214,8 @@ export function FeaturedDesigners() {
         >
           Featured Designers
         </h2>
-        <p className="mt-2 max-w-1xl text-center font-sans text-[20px] font-medium leading-normal text-[#333333]">
-          Meet the creatives shaping tomorrow&apos;s visual culture and making
-          waves in the industry.
+        <p className="mt-2 max-w-1xl mx-20 text-center font-sans text-[20px] font-medium leading-normal text-[#333333]">
+          Learn how experienced creatives with over five years in the field are strategically integrating AI into their professional workflows.
         </p>
 
         <div className="mt-12">
