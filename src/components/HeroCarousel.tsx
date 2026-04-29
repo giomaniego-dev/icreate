@@ -74,19 +74,15 @@ export function HeroCarousel() {
               {slide.subheadline}
             </p>
             <a
-              href="/#featured-designers"
+              href="/article"
               className="mt-8 inline-flex w-fit items-center justify-center rounded-2xl px-8 py-4 font-sans text-base font-bold text-black transition hover:opacity-95"
-              onClick={(event) => {
-                event.preventDefault();
-                window.location.assign("/#featured-designers");
-              }}
               style={{
                 background: "linear-gradient(to right, #F6D26D 0%, #FF9114 100%)",
                 boxShadow:
                   "0 6px 12px -2px rgba(0,0,0,0.35), 0 12px 24px -6px rgba(0,0,0,0.5)",
               }}
             >
-              Featured Artists
+              Learn More
             </a>
           </div>
         </div>

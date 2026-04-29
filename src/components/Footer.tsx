@@ -60,6 +60,14 @@ export function Footer() {
                   Profiles
                 </Link>
               </nav>
+              <nav className="flex flex-col gap-3">
+                <Link
+                  href="/article"
+                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
+                >
+                  Article
+                </Link>
+              </nav>
             </div>
           </div>
         </div>

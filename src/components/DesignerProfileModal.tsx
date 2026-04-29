@@ -301,22 +301,21 @@ export function DesignerProfileModal({
                                   hasImage ? "p-0" : "p-2.5 sm:p-3"
                                 } shadow-[0_8px_20px_rgba(0,0,0,0.14)]`
                           }`}
-                          style={{ aspectRatio: "3 / 4" }}
+                          style={hasImage ? undefined : { aspectRatio: "3 / 4" }}
                         >
                           {hasImage ? (
-                            <div className="relative h-full w-full">
-                              <Image
-                                src={slide.image ?? ""}
-                                alt={
-                                  slide.imageAlt ??
-                                  `${designer.name} output: ${slide.title}`
-                                }
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 640px) 28vw, 240px"
-                                priority={isCenter}
-                              />
-                            </div>
+                            <Image
+                              src={slide.image ?? ""}
+                              alt={
+                                slide.imageAlt ??
+                                `${designer.name} output: ${slide.title}`
+                              }
+                              width={0}
+                              height={0}
+                              sizes="(max-width: 640px) 28vw, 280px"
+                              className="block h-auto w-full"
+                              priority={isCenter}
+                            />
                           ) : (
                             <div className="flex h-full flex-col rounded-md border border-[#EFEFEF] bg-[#FAFAFA] p-2.5 text-left sm:p-3">
                               <p
