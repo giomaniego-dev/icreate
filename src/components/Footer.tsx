@@ -54,7 +54,7 @@ export function Footer() {
               </h3>
               <nav className="flex flex-col gap-3">
                 <Link
-                  href="/profiles"
+                  href="/#featured-designers"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Profiles
