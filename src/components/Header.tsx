@@ -22,7 +22,7 @@ export function Header() {
           Home
         </Link>
         <Link
-          href="/#about"
+          href="/about"
           className="rounded-full border border-white bg-transparent px-7 py-3.5 font-sans text-base font-semibold text-white transition hover:bg-zinc-600"
         >
           About

@@ -34,7 +34,7 @@ export function Footer() {
                   Home
                 </Link>
                 <Link
-                  href="/#about"
+                  href="/about"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   About
