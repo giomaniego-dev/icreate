@@ -20,6 +20,7 @@ export type DesignerProfileDetail = {
   experiences: string[];
   outputItems: DesignerOutputItem[];
   processParagraphs: string[];
+  processImage?: string;
 };
 
 type DesignerOutputItem = {
@@ -97,8 +98,6 @@ export function DesignerProfileModal({
   const modalTitleId = "designer-profile-modal-title";
 
   const outputItems = designer.outputItems;
-  const processParagraphs = designer.processParagraphs;
-
   const nOut = outputItems.length;
   const safeOutSlide = nOut > 0 ? outputSlide : 0;
   const leftIdx = nOut > 0 ? (safeOutSlide - 1 + nOut) % nOut : 0;
@@ -361,15 +360,23 @@ export function DesignerProfileModal({
               <h2 className="mb-3 text-center font-sans text-xl font-extrabold leading-tight tracking-wide text-black sm:mb-5 sm:text-lg md:text-3xl md:tracking-widest">
                 PROCESS
               </h2>
-              <div className="mx-auto w-full max-w-2xl flex-1 space-y-3 sm:max-w-2xl sm:space-y-4 text-justify">
-                {processParagraphs.map((text, i) => (
-                  <p
-                    key={i}
-                    className="font-sans text-[0.8125rem] leading-[1.65] text-black sm:text-[0.875rem] sm:leading-[1.7] md:text-[0.9375rem]"
-                  >
-                    {text}
+              <div className="mx-auto flex w-full max-w-[880px] flex-1 items-center justify-center">
+                {designer.processImage ? (
+                  <div className="relative w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={designer.processImage}
+                      alt={`${designer.name} design process`}
+                      width={1200}
+                      height={800}
+                      className="h-auto w-full"
+                      sizes="(max-width: 1024px) 92vw, 880px"
+                    />
+                  </div>
+                ) : (
+                  <p className="font-sans text-sm text-[#444444]">
+                    No process image available.
                   </p>
-                ))}
+                )}
               </div>
             </div>
           )}
