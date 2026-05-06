@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArticleHero } from "@/components/ArticleHero";
 import { ArticleSection } from "@/components/ArticleSection";
+import { PromptComparison } from "@/components/PromptComparison";
 
 const PAGER_BUTTON_STYLE = {
   background: "linear-gradient(to right, #F6D26D 0%, #FF9114 100%)",
@@ -17,10 +18,10 @@ const PAGER_BUTTON_CLASSES =
 const articles = {
   first: {
     title:
-      "Stop Working Outdated: Why Your Manual Workflow is Killing Your Creativity",
+      "Stop Working Outdated: Why Manual Workflows Can Limit Your Creativity",
     date: "April 28, 2026",
     excerpt:
-      "\u201CDesigners\u2026 real talk. Hindi ka mabagal kasi kulang ka sa skill. Mabagal ka kasi ginagawa mo pa rin lahat manually. AI tools like Firefly? Hindi sila kalaban, sila yung pang-level up mo. Imagine mo \u2018to: concept ideas in seconds, ang dali gumawa ng variations, at mas mabilis na revisions na nagreresulta sa mas mabilis na approval. Yung mga designers na aangat ngayon, hindi yung pinaka-magaling\u2026 Sila yung nag-eexecute without killing creativity.\u201D",
+      "\u201CDesigners\u2026 real talk. Hindi ka mabagal kasi kulang ka sa skill. Mabagal ka kasi ginagawa mo pa rin lahat manually. AI tools like Firefly? Hindi sila kalaban, sila yung pang-level up mo. Designers who use AI tools can cut repetitive work by up to 30-50%, not to replace creativity but to reduce burnout and stay focused on meaningful, creative flow.\u201D",
   },
   second: {
     title:
@@ -51,14 +52,18 @@ export function ArticleViewer() {
           date={articles.first.date}
           excerpt={articles.first.excerpt}
         >
-          <div className="grid grid-cols-1 items-center gap-12 grid-cols-2 md:gap-16">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <p className="max-w-xl font-sans text-base leading-[1.7] text-white/95 md:text-lg">
-              Recent industry data supports this shift, showing that designers
-              who integrate AI tools can reduce time spent on repetitive
-              technical tasks by up to 30-50%. This isn&apos;t about replacing
-              the artist; it&apos;s about removing the &quot;grunt work&quot;
-              that leads to burnout, allowing you to stay in the &quot;flow
-              state&quot; where the real magic happens.
+              Source:{" "}
+              <a
+                href="https://www.researchgate.net/publication/396096968_Integrating_Artificial_Intelligence_into_the_Design_Process_Implications_for_Creativity_and_Innovation"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-white/60 underline-offset-4 hover:decoration-white"
+              >
+                Integrating Artificial Intelligence into the Design Process:
+                Implications for Creativity and Innovation
+              </a>
             </p>
 
             <div className="flex justify-center md:justify-end">
@@ -74,43 +79,64 @@ export function ArticleViewer() {
         </ArticleHero>
 
         <ArticleSection className="bg-white" fullWidth>
-          <p className="text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
-            Aminin na natin may mga habits tayo na hindi na updated, pero
-            ginagawa pa rin natin dahil &ldquo;sanay na.&rdquo; This hit hard
-            during a recent workshop. One participant proudly shared na he
-            spent hours manually masking a subject frame-by-frame, keyframes,
-            adjustments, lahat manual. And yes, medyo malinis output niya. Pero
-            real talk&hellip; sobrang time-heavy.
-          </p>
-
-          <h2 className="my-14 text-right font-display text-3xl font-normal text-[#FF8C00] md:my-20 md:text-4xl lg:text-5xl">
+          <h2 className="mb-14 mt-8 font-display text-3xl font-normal text-[#F0AE32] md:mb-20 md:mt-12 md:text-4xl lg:text-5xl">
             &ldquo;The Real Problem Isn&apos;t the Skill&rdquo;
           </h2>
 
-          <div className="space-y-6 text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
+          <div className="max-w-6xl space-y-6 font-sans text-base leading-[1.7] text-black md:text-lg">
             <p>
-              Hindi issue ang effort. The editor was skilled. The issue is
-              system blindness. If your workflow depends purely on manual
-              execution, you&apos;re limiting scale. Tools evolved. Pero if
-              mindset stays manual-first, you&apos;re stuck.
+              Effort isn&apos;t the issue; skill is already there. The
+              opportunity lies in expanding how that skill is applied. When a
+              workflow relies entirely on manual execution, it can naturally
+              limit speed and scalability. But with today&apos;s evolving tools,
+              designers have more ways to support and enhance their process.
             </p>
             <p>
-              This principle applies across the entire creative suite. In
-              Photoshop, Generative Fill replaces hours of cloning and healing
-              by allowing you to describe the environment. In After Effects,
-              Roto Brush 2 uses machine learning to propagate masks, turning a
-              day-long task into a few minutes of refinement. Even in
-              Illustrator, using AI-assisted vectorizing provides a foundation
-              that drastically shortens the path from a raw sketch to a
-              workable file.
+              I remember showing someone a simple workflow in Premiere Pro
+              using the Object Mask Tool. I selected a part of the video, went
+              to Effect Controls, and clicked &ldquo;Track Selected Mask&rdquo;
+              forward and backward. Within seconds, the mask was clean. I
+              duplicated the clip and placed text behind the subject to show
+              its practical use. What usually takes hours with manual masking
+              and key framing was reduced to minutes, with only minor
+              adjustments needed.
             </p>
           </div>
 
-          <h2 className="mt-14 font-display text-3xl font-normal text-[#FF8C00] md:mt-20 md:text-4xl lg:text-5xl">
-            &ldquo;Ang dami ko pang pwedeng gawin&hellip;&rdquo;
-          </h2>
+          <div className="mt-16 flex items-center gap-3 md:mt-20 md:gap-4">
+            <span aria-hidden className="shrink-0 text-[#F0AE32]">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-9 w-9 md:h-11 md:w-11"
+              >
+                <path
+                  d="M12 3.5a6.5 6.5 0 0 0-4.18 11.48c.95.8 1.43 1.55 1.57 2.27h5.22c.14-.72.62-1.47 1.57-2.27A6.5 6.5 0 0 0 12 3.5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9.5 20.5h5M10 17.8h4"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M12 1v1.4M4.9 4.9l1 1M19.1 4.9l-1 1M2.8 12H1.4M22.6 12h-1.4"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <h2 className="font-display text-3xl font-normal text-[#F0AE32] md:text-4xl lg:text-5xl">
+              &ldquo;Ang dami ko pang pwedeng gawin&hellip;&rdquo;
+            </h2>
+          </div>
 
-          <div className="mt-10 space-y-6 text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
+          <div className="mt-10 max-w-6xl space-y-6 font-sans text-base leading-[1.7] text-black md:text-lg">
             <p>
               After the demo, he got excited and you could see it, like
               something had just been unlocked. &ldquo;Ang dami ko pa pwedeng
@@ -174,98 +200,39 @@ export function ArticleViewer() {
         date={articles.second.date}
         excerpt={articles.second.excerpt}
       />
-
+      <div className="mt-12 md:mt-14">
+        <PromptComparison compact />
+      </div>
       <ArticleSection className="bg-white" fullWidth>
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-16">
-          <p className="text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
+        <h2 className="mb-10 font-display text-3xl font-normal leading-[1.15] text-[#F0AE32] md:mb-12 md:text-4xl lg:text-5xl">
+          The Evolution of the &ldquo;Silent Partner&rdquo;
+        </h2>
+
+        <div className="max-w-6xl space-y-6 font-sans text-base leading-[1.7] text-black md:text-lg">
+          <p>
             In a recent webinar titled &ldquo;The Truth About AI in Graphic
-            Design,&rdquo; Rollan Ba&ntilde;ez of Creative Nation Academy
-            offered a compelling look into this shift. His central thesis is
-            clear: AI is not here to replace the artist, but to fundamentally
-            redefine the creative workflow.
-          </p>
-
-          <h2 className="text-center font-display text-3xl font-normal leading-[1.15] text-[#FF8C00] md:text-4xl lg:text-5xl">
-            The Evolution of the &ldquo;Silent Partner&rdquo;
-          </h2>
-        </div>
-
-        <div className="mt-12 space-y-6 text-justify font-sans text-base leading-[1.7] text-black md:mt-16 md:text-lg">
-          <p>
-            Generative AI has become so common so quickly that it appears like
-            it just showed up. Ba&ntilde;ez said that intelligence has been
-            built into our software for a long time, though. Since 2018, tools
-            like Adobe Sensei have been quietly improving workflows by taking
-            care of the &ldquo;invisible&rdquo; work that designers often
-            don&apos;t think about.
+            Design,&rdquo; Rollan Ba&ntilde;ez explains that AI is not replacing
+            designers but transforming the creative workflow. He emphasizes that
+            what feels like a sudden rise of AI is actually an evolution of
+            technologies that have long been embedded in design tools, such as
+            Adobe Sensei, which have been quietly improving efficiency since
+            around 2018.
           </p>
           <p>
-            Today&apos;s AI is most useful right now because it can help with
-            &ldquo;blank canvas syndrome.&rdquo; By automating high-demand,
-            repetitive tasks&mdash;what Ba&ntilde;ez calls the &ldquo;manual
-            labor&rdquo; of design&mdash;creatives can shift their focus from
-            doing things to coming up with new ideas. The software does the
-            hard work, and the designer does the planning.
+            Today, generative AI builds on this foundation by helping designers
+            overcome &ldquo;blank canvas syndrome&rdquo; and by taking over
+            repetitive, time-consuming tasks the &ldquo;manual labor&rdquo; of
+            design. As a result, creatives are able to shift their focus from
+            execution to ideation, allowing them to concentrate more on
+            conceptual thinking, decision-making, and overall creative
+            direction.
           </p>
         </div>
 
-        <p className="mt-12 text-center font-sans text-base italic text-black md:mt-16 md:text-lg">
+        <p className="mt-14 text-center font-sans text-base italic text-black md:mt-16 md:text-lg">
           &ldquo;What you solved here is the manual work.&rdquo; &mdash; Rollan
           Ba&ntilde;ez
         </p>
-
-        <h2 className="mt-16 font-display text-3xl font-normal text-[#FF8C00] md:mt-24 md:text-4xl lg:text-5xl">
-          The Efficiency vs. &ldquo;Prompt Fatigue&rdquo;
-        </h2>
-
-        <div className="mt-10 space-y-6 text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
-          <p>
-            While AI&apos;s speed is its greatest selling point, it introduces
-            a new kind of exhaustion. We are moving from a world of
-            &ldquo;doing&rdquo; to a world of &ldquo;curating,&rdquo; but
-            curation has its own costs.
-          </p>
-          <p>
-            A significant risk in the AI-first approach is &ldquo;Prompt
-            Fatigue.&rdquo; This occurs when the time spent fine-tuning a
-            prompt to match a specific internal vision actually exceeds the
-            time it would have taken to create the asset manually. Furthermore,
-            there is the danger of technical atrophy. Ba&ntilde;ez warned that
-            if we lean too heavily on automation, our foundational skills
-            become &ldquo;mapurol&rdquo; (blunt).
-          </p>
-          <p>
-            A designer who cannot &ldquo;fact-check&rdquo; an AI-generated
-            layout or manually refine a digital artifact loses the very
-            &ldquo;human touch&rdquo; that differentiates professional,
-            high-quality work from generic, algorithmically-generated noise.
-          </p>
-        </div>
-
-        <h2 className="mt-16 text-right font-display text-3xl font-normal text-[#FF8C00] md:mt-24 md:text-4xl lg:text-5xl">
-          Ethics and the New Digital Ledger
-        </h2>
-
-        <div className="mt-10 space-y-6 text-justify font-sans text-base leading-[1.7] text-black md:text-lg">
-          <p>
-            Beyond the craft itself lies the complex issue of integrity. The
-            industry is currently grappling with what many call a &ldquo;battle
-            cry&rdquo; for artist rights&mdash;protesting the use of creative
-            intellectual property to train models without consent or
-            compensation.
-          </p>
-          <p>
-            Professional integrity in this new era will be defined by
-            transparency. This isn&apos;t just an ethical preference; it is
-            becoming a technical standard. Initiatives like the Content
-            Authenticity Initiative (CAI) are paving the way for &ldquo;Content
-            Credentials,&rdquo; allowing creators to prove the origin of their
-            work and ensure &ldquo;Substantial Human Intervention&rdquo; is
-            documented. In a world of deepfakes and infinite iterations,
-            proving how something was made is becoming as valuable as the work
-            itself.
-          </p>
-        </div>
 
         <div className="relative mt-16 md:mt-24">
           <div className="rounded-3xl bg-[#1E3A8A] px-8 py-10 md:px-12 md:py-14 lg:px-14 lg:py-16">
@@ -301,19 +268,6 @@ export function ArticleViewer() {
             </div>
           </div>
         </div>
-
-        <p className="mt-12 text-justify font-sans text-base leading-[1.7] text-black md:mt-16 md:text-lg">
-          While AI can generate options, it cannot provide the
-          &ldquo;why.&rdquo; It cannot understand a client&apos;s specific
-          emotional goals, the ethical implications of a visual metaphor, or
-          the cultural nuances of a brand&apos;s identity. AI is a powerful
-          assistant that can democratize creativity and vanish the &ldquo;blank
-          page&rdquo; forever. However, the true value of a designer lies in
-          their taste, their ethics, and their ability to steer technology
-          toward a meaningful human connection. AI may make us look smart by
-          polishing our outputs, but it is our human intent that actually makes
-          the work intelligent.
-        </p>
 
         <div className="mt-20 flex flex-col items-center gap-6 md:mt-28">
           <p className="text-center font-sans text-base text-zinc-500 md:text-lg">

@@ -17,13 +17,24 @@ export function ProblemBanner() {
         </div>
 
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 px-4 py-8 sm:gap-6 sm:px-6 sm:py-10 md:flex-row md:items-center md:justify-center md:gap-8 md:px-12 md:py-16 lg:gap-10 lg:px-16">
-          <p className="max-w-2xl text-left font-sans text-[15px] font-medium leading-[1.65] text-white sm:text-[17px] md:text-[20px]">
-            Despite wide digital access, recent studies show that only a small
-            portion of Philippine businesses actively use or understand AI tools,
-            with just about 17% considered &quot;AI-ready,&quot; indicating that
-            many designers and small studios still haven&apos;t fully integrated
-            AI into their workflow.
-          </p>
+          <div className="max-w-2xl">
+            <p className="text-left font-sans text-[15px] font-medium leading-[1.65] text-white sm:text-[17px] md:text-[20px]">
+              Despite wide digital access, recent studies show that only a small
+              portion of Philippine businesses actively use or understand AI
+              tools, with just about 17% considered &quot;AI-ready,&quot;
+              indicating that many designers and small studios still haven&apos;t
+              fully integrated AI into their workflow.
+            </p>
+            <a
+              href="https://philstartech.com/news/2023/11/24/1797/recent-study-finds-only-17-of-companies-in-ph-are-ai-ready/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-block text-left font-sans text-[11px] text-white/70 underline decoration-white/40 underline-offset-2 hover:text-white hover:decoration-white sm:text-[12px] md:text-[13px]"
+            >
+              Source: Recent study finds only 17% of companies in PH are
+              AI-ready (2023)
+            </a>
+          </div>
 
           <div className="flex shrink-0 flex-col items-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#F8F8EC] sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-36 lg:w-36">
