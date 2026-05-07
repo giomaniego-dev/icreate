@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import {
   DesignerProfileModal,
   type DesignerProfileDetail,
@@ -206,14 +206,13 @@ export function FeaturedDesigners() {
 
   return (
     <section
-      className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16"
+      className="bg-white px-6 py-12 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-16"
       id="featured-designers"
     >
       <div className="mx-auto max-w-6xl">
         <h2
-          className="text-center font-display font-normal leading-tight"
+          className="text-center font-display text-[2.25rem] font-normal leading-tight sm:text-[2.75rem] md:text-[3.25rem] lg:text-[55px]"
           style={{
-            fontSize: "55px",
             background: "linear-gradient(to right, #FBC949 0%, #FF9114 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -222,26 +221,16 @@ export function FeaturedDesigners() {
         >
           Featured Designers
         </h2>
-        <p className="mt-2 max-w-1xl mx-20 text-center font-sans text-[20px] font-medium leading-normal text-[#333333]">
+        <p className="mx-auto mt-2 max-w-2xl text-center font-sans text-base font-medium leading-normal text-[#333333] sm:text-lg md:text-[20px]">
           Learn how experienced creatives with over five years in the field are
           strategically integrating AI into their professional workflows.
         </p>
 
-        <div className="mt-12">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={
-              {
-                //transform: `translateX(-${(currentSlide * 100) / cardsPerView}%)`,
-              }
-            }
-          >
+        <div className="mt-10 sm:mt-12">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {designers.map((designer, index) => (
-              <div
-                key={designer.name}
-                className="w-full shrink-0 px-3 sm:w-1/2 lg:w-1/3"
-              >
-                <article className="group overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.14)]">
+              <div key={designer.name} className="w-full">
+                <article className="group h-full overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.14)]">
                   <div className="relative aspect-square w-full overflow-hidden rounded-t-xl">
                     <Image
                       src={designer.image}

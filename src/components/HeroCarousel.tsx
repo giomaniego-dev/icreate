@@ -63,14 +63,14 @@ export function HeroCarousel() {
 
           {/* Content */}
           <div className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 pb-20 md:px-12 lg:max-w-6xl lg:px-40">
-            <h1 className="font-display text-4xl font-normal leading-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="flex min-h-36 flex-col font-display text-4xl font-normal leading-tight text-white md:min-h-46 md:text-5xl lg:min-h-57 lg:text-6xl">
               {slide.headline.map((line, i) => (
                 <span key={i} className="block">
                   {line}
                 </span>
               ))}
             </h1>
-            <p className="mt-6 max-w-xl font-sans text-lg text-white/95 md:text-xl">
+            <p className="mt-6 min-h-14 max-w-xl font-sans text-lg text-white/95 md:min-h-16 md:text-xl">
               {slide.subheadline}
             </p>
             <a

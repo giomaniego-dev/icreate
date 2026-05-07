@@ -70,10 +70,10 @@ function FeaturedAiToolCard({
 
   return (
     <article
-      className={`flex h-full min-h-[182px] rounded-[18px] border border-[#D8D8D8] bg-[#EBE8E3] shadow-[0_2px_8px_rgba(0,0,0,0.08)] ${
+      className={`flex h-full min-h-[180px] rounded-[18px] border border-[#D8D8D8] bg-[#EBE8E3] shadow-[0_2px_8px_rgba(0,0,0,0.08)] ${
         isFullBleedCard
           ? "items-stretch overflow-hidden p-0"
-          : "items-start p-4 sm:p-5"
+          : "items-center p-5 sm:p-6"
       }`}
     >
       {renderTips ? (
@@ -103,27 +103,27 @@ function FeaturedAiToolCard({
         </div>
       ) : (
         <>
-          <div className="mr-4 mt-1 flex h-[78px] w-[78px] shrink-0 items-center justify-center rounded-[14px] bg-[#F4F4F4] sm:h-[92px] sm:w-[92px] sm:rounded-[18px]">
-            {tool.iconImage ? (
+          {tool.iconImage ? (
+            <div className="mr-5 flex h-[80px] w-[80px] shrink-0 items-center justify-center self-start sm:mr-6 sm:h-[90px] sm:w-[90px]">
               <Image
                 src={tool.iconImage}
                 alt={`${tool.title ?? "AI tool"} logo`}
-                width={78}
-                height={78}
-                className="h-[64px] w-[64px] rounded-[14px] object-cover sm:h-[78px] sm:w-[78px] sm:rounded-[16px]"
+                width={120}
+                height={120}
+                className="h-full w-full object-contain"
               />
-            ) : null}
-          </div>
+            </div>
+          ) : null}
 
           {(tool.title || tool.description) && (
-            <div className="flex min-w-0 flex-1 flex-col pr-8">
+            <div className="flex min-w-0 flex-1 flex-col self-start pr-6">
               {tool.title && (
-                <h3 className="font-sans text-[28px] font-semibold leading-[1.05] text-[#E6B814] sm:text-[34px]">
+                <h3 className="font-sans text-[20px] font-bold leading-[1.1] text-[#D9A21B] sm:text-[22px]">
                   {tool.title}
                 </h3>
               )}
               {tool.description && (
-                <p className="mt-1.5 font-sans text-[18px] leading-[1.18] text-[#121212] sm:mt-2 sm:text-[22px]">
+                <p className="mt-1.5 font-sans text-[14px] leading-snug text-[#1A1A1A] sm:text-[15px]">
                   {tool.description}
                 </p>
               )}
@@ -139,30 +139,30 @@ export function FeaturedAiToolsSection() {
   const [activeTipCard, setActiveTipCard] = useState<string | null>(null);
 
   return (
-    <section className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16">
+    <section className="bg-white px-6 py-14 sm:px-8 md:px-10 md:py-16 lg:px-14">
       <div className="mx-auto max-w-6xl">
-        <div className="relative rounded-[18px] bg-linear-to-r from-[#2763B9] to-[#17275F] px-5 py-6 shadow-[0_4px_12px_rgba(0,0,0,0.16)] sm:px-8 sm:py-6">
+        <div className="relative rounded-[18px] bg-linear-to-r from-[#2763B9] to-[#17275F] px-5 py-5 shadow-[0_4px_12px_rgba(0,0,0,0.16)] sm:px-8 sm:py-6 md:px-10">
           <div className="flex items-center justify-between gap-5">
-            <h2 className="mx-5 max-w-[700px] font-sans text-[44px] font-bold leading-[1.06] text-[#E7E8E8] sm:text-[52px] md:text-[58px]">
+            <h2 className="max-w-[640px] font-sans text-[34px] font-bold leading-[1.1] text-[#FFFFFF] sm:text-[40px] md:text-[44px]">
               Discover Common AI Tools Used by Professionals
             </h2>
             <Image
               src="/images/answer-bot.svg"
               alt="AI assistant icon"
-              width={220}
-              height={220}
-              className="hidden h-auto w-[220px] shrink-0 md:block lg:w-[220px]"
+              width={150}
+              height={150}
+              className="hidden h-auto w-[130px] shrink-0 md:block lg:w-[150px]"
             />
           </div>
         </div>
-        <div className="mx-auto max-w-6xl rounded-[20px] bg-[#F5F5F5] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.06)] sm:px-8 sm:py-6">
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mx-auto mt-6 max-w-6xl rounded-[20px] bg-[#F5F5F5] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6 md:px-8">
+          <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2">
             {featuredAiTools.map((tool) => (
               <Link
                 key={tool.id}
                 href="#"
                 aria-label={tool.title ?? `${tool.id} card`}
-                className="group"
+                className="group block h-full"
                 onClick={(event) => {
                   if (!tool.previewImage) {
                     event.preventDefault();
@@ -177,7 +177,7 @@ export function FeaturedAiToolsSection() {
                     tool={tool}
                     showTips={activeTipCard === tool.id}
                   />
-                  <span className="absolute bottom-3 right-4 text-[34px] leading-none text-[#B6B6B6] transition-colors duration-200 group-hover:text-[#8D8D8D]">
+                  <span className="absolute bottom-3 right-4 text-[30px] leading-none text-[#B6B6B6] transition-colors duration-200 group-hover:text-[#8D8D8D]">
                     →
                   </span>
                 </div>

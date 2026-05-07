@@ -44,25 +44,26 @@ export function AboutTeamSection() {
         MEET THE TEAM
       </h2>
 
-      <div className="mx-auto mt-12 max-w-6xl">
-        <div className="grid grid-cols-2 justify-items-center gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+      <div className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
+        <div className="grid grid-cols-2 justify-items-center gap-x-6 gap-y-8 sm:grid-cols-3 sm:gap-x-8 md:gap-x-10 lg:grid-cols-5 lg:gap-x-6 xl:gap-x-10">
           {teamMembers.map((member) => (
             <article
               key={member.name}
-              className="w-[168px] overflow-hidden border border-[#8DA5D8]/30 bg-[#3E3E42] shadow-[0_7px_16px_rgba(0,0,0,0.2)] md:w-[176px]"
+              className="group w-full max-w-[190px] overflow-hidden border border-[#8DA5D8]/30 bg-[#3E3E42] shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(0,0,0,0.28)]"
             >
-              <div className="h-[174px] w-full bg-linear-to-b from-[#2D67B9] to-[#1E4282] md:h-[182px]">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={176}
-                  height={186}
-                  className="h-full w-full object-cover"
-                  sizes="176px"
-                />
+              <div className="relative aspect-square w-full overflow-hidden bg-linear-to-b from-[#2D67B9] to-[#1E4282] px-3 pt-3 sm:px-4 sm:pt-4">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-contain object-bottom transition-transform duration-500 ease-out group-hover:scale-105"
+                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 190px"
+                  />
+                </div>
               </div>
-              <div className="flex min-h-[74px] items-center justify-center px-3 py-3 md:min-h-[80px]">
-                <p className="text-center font-sans text-[13px] font-medium leading-[1.2] text-white md:text-[14px]">
+              <div className="flex min-h-[78px] items-center justify-center px-3 py-3 md:min-h-[82px]">
+                <p className="text-center font-sans text-[13px] font-medium leading-tight text-white md:text-[14px]">
                   {member.name}
                 </p>
               </div>

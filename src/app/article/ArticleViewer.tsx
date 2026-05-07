@@ -51,32 +51,30 @@ export function ArticleViewer() {
           title={articles.first.title}
           date={articles.first.date}
           excerpt={articles.first.excerpt}
-        >
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <p className="max-w-xl font-sans text-base leading-[1.7] text-white/95 md:text-lg">
+          source={
+            <p>
               Source:{" "}
               <a
                 href="https://www.researchgate.net/publication/396096968_Integrating_Artificial_Intelligence_into_the_Design_Process_Implications_for_Creativity_and_Innovation"
                 target="_blank"
                 rel="noreferrer"
-                className="underline decoration-white/60 underline-offset-4 hover:decoration-white"
+                className="underline decoration-white/50 underline-offset-4 transition hover:text-white hover:decoration-white"
               >
                 Integrating Artificial Intelligence into the Design Process:
                 Implications for Creativity and Innovation
               </a>
             </p>
-
-            <div className="flex justify-center md:justify-end">
-              <Image
-                src="/images/analytics.png"
-                alt="AI Impact on Workflow Efficiency pie chart: 40% time saved by AI on repetitive tasks, 60% remaining for production and creative polish"
-                width={573}
-                height={432}
-                className="h-auto w-full max-w-md"
-              />
-            </div>
-          </div>
-        </ArticleHero>
+          }
+          side={
+            <Image
+              src="/images/analytics.png"
+              alt="AI Impact on Workflow Efficiency pie chart: 40% time saved by AI on repetitive tasks, 60% remaining for production and creative polish"
+              width={573}
+              height={432}
+              className="h-auto w-full max-w-sm md:max-w-none"
+            />
+          }
+        />
 
         <ArticleSection className="bg-white" fullWidth>
           <h2 className="mb-14 mt-8 font-display text-3xl font-normal text-[#F0AE32] md:mb-20 md:mt-12 md:text-4xl lg:text-5xl">
