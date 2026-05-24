@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       <AboutHero title="ABOUT" description={ABOUT_DESCRIPTION} />
       <AboutContentSection />
       <AboutTeamSection />
-    </main>
+    </>
   );
 }
