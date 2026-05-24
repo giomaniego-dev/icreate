@@ -4,17 +4,24 @@ import Image from "next/image";
 import { useState } from "react";
 import { QuizModal } from "./QuizModal";
 
-export function QuizBanner() {
+type QuizBannerProps = {
+  embedded?: boolean;
+};
+
+export function QuizBanner({ embedded = false }: QuizBannerProps) {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
-  return (
-    <section id="quiz" className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-center py-4 sm:py-6 md:py-8">
-        <div
-          className="flex w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-2xl px-6 py-10 sm:px-8 sm:py-12 md:flex-row md:justify-between md:gap-8 md:px-12 lg:gap-10 lg:px-16"
-          style={{
-            background: "linear-gradient(to right, #2261B4 21%, #14234C 100%)",
-          }}
-        >
+
+  const card = (
+    <div
+      className={
+        embedded
+          ? "flex w-full max-w-5xl flex-col items-center justify-center gap-8 overflow-hidden rounded-2xl px-6 py-10 sm:px-8 sm:py-12 md:flex-row md:justify-between md:gap-8 md:px-12 lg:gap-10 lg:px-16 lg:py-14"
+          : "flex w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-2xl px-6 py-10 sm:px-8 sm:py-12 md:flex-row md:justify-between md:gap-8 md:px-12 lg:gap-10 lg:px-16"
+      }
+      style={{
+        background: "linear-gradient(to right, #2261B4 21%, #14234C 100%)",
+      }}
+    >
           <div
             className="flex shrink-0 items-center justify-center overflow-hidden rounded-xl p-3 sm:p-4 md:p-5 lg:p-6"
           >
@@ -47,8 +54,23 @@ export function QuizBanner() {
               START
             </button>
           </div>
-        </div>
-      </div> 
+    </div>
+  );
+
+  if (embedded) {
+    return (
+      <>
+        {card}
+        <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      </>
+    );
+  }
+
+  return (
+    <section id="quiz" className="bg-white px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-16">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-center py-4 sm:py-6 md:py-8">
+        {card}
+      </div>
       <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </section>
   );
