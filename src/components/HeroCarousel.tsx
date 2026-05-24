@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-import { Header } from "./Header";
 
 const slides = [
   {
@@ -34,8 +33,6 @@ export function HeroCarousel() {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <Header />
-
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

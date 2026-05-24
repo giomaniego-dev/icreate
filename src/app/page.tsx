@@ -1,17 +1,12 @@
-import { FeaturedDesigners } from "@/components/FeaturedDesigners";
-import { FeaturedAiToolsSection } from "@/components/FeaturedAiToolsSection";
-import { HeroCarousel } from "@/components/HeroCarousel";
-import { ProblemBanner } from "@/components/ProblemBanner";
-import { QuizBanner } from "@/components/QuizBanner";
+import type { Metadata } from "next";
+import { HomeHero } from "@/components/HomeHero";
+
+export const metadata: Metadata = {
+  title: "iCreate",
+  description:
+    "Explore interactive workflows, creative processes, and real-world designer–AI collaboration in graphic design.",
+};
 
 export default function Home() {
-  return (
-    <main>
-      <HeroCarousel />
-      <QuizBanner />
-      <ProblemBanner />
-      <FeaturedDesigners />
-      <FeaturedAiToolsSection />
-    </main>
-  );
+  return <HomeHero />;
 }
