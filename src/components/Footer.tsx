@@ -40,7 +40,7 @@ export function Footer() {
                   About
                 </Link>
                 <Link
-                  href="/#quiz"
+                  href="/quiz"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Quiz
@@ -54,7 +54,7 @@ export function Footer() {
               </h3>
               <nav className="flex flex-col gap-3">
                 <Link
-                  href="/#featured-designers"
+                  href="/artists"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Profiles
