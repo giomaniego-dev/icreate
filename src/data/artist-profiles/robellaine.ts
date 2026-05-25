@@ -49,22 +49,37 @@ export const robellaineProfileContent: ArtistProfileContent = {
     {
       label: "Planning",
       icon: asset("planning.png"),
+      modalTitle: "PLANNING & CONCEPTUALIZATION",
+      modalDescription:
+        "Workflow begins by conceptualizing ideas directly from her own creative thinking and understanding of the brand or project requirements. With her background in multimedia arts, she develops the initial concept manually, relying on experience, visual judgment, and brand direction before using any AI tools. This stage is fully human-driven, especially in defining the core idea and creative intention.",
     },
     {
       label: "Concept Development",
       icon: asset("concept.png"),
+      modalTitle: "AI-ASSISTED CONCEPT DEVELOPMENT",
+      modalDescription:
+        "She uses tools like ChatGPT or Gemini to translate her initial ideas into more structured concepts or proposal directions. AI is used to expand, refine, and organize her thoughts into clearer creative outputs, helping her quickly explore possible directions for branding and visual communication before production begins.",
     },
     {
       label: "Visual Generation",
       icon: asset("asset.png"),
+      modalTitle: "AI VISUAL GENERATION & REFERENCE ENHANCEMENT",
+      modalDescription:
+        "She uses Magnific AI (formerly Freepik-related tools) along with Canva AI to generate, enhance, or refine visual references that support her design direction. These tools help her transform concepts into visual materials and provide additional design variations that assist in faster decision-making and execution.",
     },
     {
       label: "Design Execution",
       icon: asset("execution.png"),
+      modalTitle: "HUMAN DESIGN EXECUTION & BRAND PRODUCTION",
+      modalDescription:
+        "She takes AI-generated concepts and visuals and manually executes the final design using her own skills in layout, composition, and branding. This includes creating social media posts, managing brand assets, and ensuring that all outputs align with professional standards and the intended identity of the project. Her role here remains central in shaping the final visual outcome.",
     },
     {
       label: "Refinement",
       icon: asset("refinement.png"),
+      modalTitle: "FINAL DESIGN REFINEMENT",
+      modalDescription:
+        "She finalizes the overall composition by refining layouts, adjusting branding elements, and ensuring that the AI-generated visuals align with the intended concept and identity of the project. Although AI helps accelerate the workflow and reduce production time, the final output is still manually polished and creatively directed by her to maintain originality, consistency, and professional quality before publication or client delivery.",
     },
   ],
   works: [

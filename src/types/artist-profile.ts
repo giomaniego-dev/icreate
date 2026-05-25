@@ -24,6 +24,8 @@ export type ArtistProcessStep = {
   label: string;
   icon: string;
   iconAlt?: string;
+  modalTitle?: string;
+  modalDescription?: string;
 };
 
 export type ArtistWork = {

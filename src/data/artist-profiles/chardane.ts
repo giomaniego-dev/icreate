@@ -67,22 +67,37 @@ export const chardaneProfileContent: ArtistProfileContent = {
     {
       label: "Planning",
       icon: asset("planning.png"),
+      modalTitle: "PLANNING / CONTENT UNDERSTANDING",
+      modalDescription:
+        "Begins when Ms. Chardane receives the client request, studies the deliverables, interprets the goal of the project, and identifies the cultural and visual requirements needed for the design, especially for Arabic-based materials where layout, language flow, and emphasis are important considerations.",
     },
     {
       label: "Translation",
       icon: asset("translation.png"),
+      modalTitle: "TRANSLATION & CREATIVE SUPPORT",
+      modalDescription:
+        "follows as she uses tools like ChatGPT to translate Arabic text into English, explain unfamiliar topics, identify important keywords, and provide visual references or inspirations that help her overcome creative blocks and better understand the direction of the project.",
     },
     {
       label: "Creative Direction",
       icon: asset("direction.png"),
+      modalTitle: "CREATIVE DIRECTION & DESIGN DECISION-MAKING",
+      modalDescription:
+        "Occurs as the designer determines the artistic direction, selects which ideas and references fit the brand, decides the appropriate visual style, and plans how the message should be communicated through layout, imagery, and typography while maintaining originality in the overall concept.",
     },
     {
       label: "Asset Generation",
       icon: asset("asset.png"),
+      modalTitle: "ASSET GENERATION & WORKFLOW ASSISTANCE",
+      modalDescription:
+        "Comes next as she utilizes tools such as Adobe Firefly, Bannerflow, and Adobe Photoshop Generative Fill to generate culturally specific assets, modify visuals, automate repetitive banner resizing tasks, and correct flaws in generated outputs to speed up the production process.",
     },
     {
       label: "Refinement",
       icon: asset("refinement.png"),
+      modalTitle: "FINAL INTEGRATION & VALIDATION",
+      modalDescription:
+        "Completes the workflow as she manually assembles the final composition, refines layouts and branding, evaluates the quality of AI-generated outputs, ensures cultural and visual accuracy, and makes the final creative decisions that transform AI-assisted materials into a polished and original design outcome.",
     },
   ],
   works: [
