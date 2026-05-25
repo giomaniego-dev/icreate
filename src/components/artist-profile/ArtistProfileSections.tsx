@@ -27,7 +27,7 @@ export function ArtistProfileSections({
   return (
     <section className="pb-0" style={{ backgroundColor: PROFILE_PAGE_BG }}>
       <div
-        className={`mx-auto max-w-6xl space-y-4 px-4 pb-4 sm:space-y-5 sm:px-6 sm:pb-5 md:px-10 md:pb-6 lg:px-16 ${topPadding}`}
+        className={`space-y-4 px-8 pb-4 sm:space-y-5 sm:pb-5 md:px-12 md:pb-6 lg:px-40 ${topPadding}`}
       >
         <DesignerProfileCard profile={content.profile} />
 

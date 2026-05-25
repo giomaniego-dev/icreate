@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { HeroShell } from "@/components/layout/HeroShell";
-import { PageContainer } from "./layout/PageContainer";
 import { QuizFlow } from "./QuizFlow";
 import { QUIZ_CTA_GRADIENT } from "@/lib/quiz-data";
 import { QUIZ_PAGE_BG } from "@/lib/site-layout";
@@ -20,13 +19,10 @@ export function QuizPageContent() {
     >
       <HeroShell>
         {view === "landing" ? (
-          <PageContainer
-            size="content"
-            className="flex flex-1 flex-col items-center justify-center px-4 pb-16 pt-4 md:pb-20"
-          >
+          <div className="flex flex-1 flex-col items-center justify-center px-8 pb-16 pt-4 md:px-12 md:pb-20 lg:px-40">
             <div className="flex w-full flex-col items-center gap-8 md:flex-row md:items-center md:gap-10 lg:gap-14">
               <div
-                className="flex shrink-0 items-end justify-center overflow-hidden rounded-2xl px-6 pt-6 sm:px-8 sm:pt-8 md:px-10 md:pt-10"
+                className="flex shrink-0 items-center justify-center overflow-hidden rounded-2xl p-6 sm:p-8 md:p-10"
                 style={{ background: QUIZ_CTA_GRADIENT }}
               >
                 <Image
@@ -61,18 +57,15 @@ export function QuizPageContent() {
                 </button>
               </div>
             </div>
-          </PageContainer>
+          </div>
         ) : (
-          <PageContainer
-            size="content"
-            className="flex flex-1 flex-col items-center justify-center pb-12"
-          >
+          <div className="flex flex-1 flex-col items-center justify-center px-8 pb-12 md:px-12 lg:px-40">
             <QuizFlow
               layout="fullscreen"
               initialStep="intro"
               onBackToLanding={() => setView("landing")}
             />
-          </PageContainer>
+          </div>
         )}
       </HeroShell>
     </section>

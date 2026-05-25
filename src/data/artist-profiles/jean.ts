@@ -81,8 +81,18 @@ export const jeanProfileContent: ArtistProfileContent = {
     },
   ],
   works: [
-    { src: asset("jean-1.png"), alt: "Portfolio work 1" },
+    {
+      src: asset("jean-1.png"),
+      alt: "Portfolio work 1",
+      description:
+        "Using the 2024 version of Adobe Firefly with an uploaded image reference to generate the initial visual. The image was then refined in Adobe Photoshop by cleaning up impurities and integrating the product into a cohesive single-scene composition.",
+    },
     { src: asset("work-2.png"), alt: "Portfolio work 2" },
-    { src: asset("jean-3.png"), alt: "Portfolio work 3" },
+    {
+      src: asset("jean-3.png"),
+      alt: "Portfolio work 3",
+      description:
+        "The image was generated using the 2024 version of Adobe Firefly with an uploaded image reference. The final composition was further refined in Adobe Photoshop by removing impurities and adding the product to create a unified scene.",
+    },
   ],
 };
