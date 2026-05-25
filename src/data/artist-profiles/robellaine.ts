@@ -31,14 +31,17 @@ export const robellaineProfileContent: ArtistProfileContent = {
     {
       name: "Midjourney",
       icon: asset("magnific.png"),
+      url: "https://www.midjourney.com/",
     },
     {
       name: "Google Gemini",
       icon: asset("gemini.png"),
+      url: "https://gemini.google.com/",
     },
     {
       name: "ChatGPT",
       icon: asset("chatgpt.png"),
+      url: "https://chatgpt.com/",
     },
   ],
   skills: ["Brand management", "Social media content creation"],
@@ -66,8 +69,18 @@ export const robellaineProfileContent: ArtistProfileContent = {
   ],
   works: [
     { src: asset("work-1.png"), alt: "Portfolio work 1" },
-    { src: asset("work-2.png"), alt: "Portfolio work 2" },
-    { src: asset("work-3.png"), alt: "Portfolio work 3" },
+    {
+      src: asset("rob-2.png"),
+      alt: "Portfolio work 2",
+      description:
+        "A product-focused visual created through a controlled photoshoot to ensure proper lighting, angles, and consistent brand presentation, with assets captured in a standard portrait format. The composition was adapted for a Facebook cover layout using Canva’s Magic Expand to extend the background while maintaining visual continuity and allowing space for design elements. Final output was completed in Canva through product arrangement, environmental refinement, and structured typography hierarchy to emphasize key messaging and create a cohesive, platform-ready design.",
+    },
+    {
+      src: asset("rob-3.png"),
+      alt: "Portfolio work 3",
+      description:
+        "A Shopee banner created through a hybrid workflow combining curated visual references and AI-assisted generation. An inspiration image from Pinterest guided the concept direction, which was translated into a structured prompt for AI image generation in Freepik (Magnific) to produce a model-based product visual aligned with a Gen Z beauty aesthetic. The selected output was then refined in Canva, where layout, typography, promotional messaging, and call-to-action elements were arranged to achieve a balanced, conversion-focused composition.",
+    },
   ],
   worksLayout: "featured",
 };

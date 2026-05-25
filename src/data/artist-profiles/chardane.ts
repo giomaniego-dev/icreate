@@ -30,26 +30,32 @@ export const chardaneProfileContent: ArtistProfileContent = {
     {
       name: "Adobe Firefly",
       icon: asset("firefly.png"),
+      url: "https://firefly.adobe.com/",
     },
     {
       name: "Adobe Photoshop",
       icon: asset("photoshop.png"),
+      url: "https://www.adobe.com/products/photoshop.html",
     },
     {
       name: "ChatGPT",
       icon: asset("chatgpt.png"),
+      url: "https://chatgpt.com/",
     },
     {
       name: "Bannerflow",
       icon: asset("bannerflow.png"),
+      url: "https://www.bannerflow.com/",
     },
     {
       name: "Artlist",
       icon: asset("artlist.png"),
+      url: "https://artlist.io/",
     },
     {
       name: "HeyGen",
       icon: asset("heygen.png"),
+      url: "https://www.heygen.com/",
     },
   ],
   skills: [
@@ -81,7 +87,12 @@ export const chardaneProfileContent: ArtistProfileContent = {
   ],
   works: [
     { src: asset("work-1.png"), alt: "Portfolio work 1" },
-    { src: asset("work-2.png"), alt: "Portfolio work 2" },
+    {
+      src: asset("chard-2.png"),
+      alt: "Portfolio work 2",
+      description:
+        "A fully AI-generated visual created using Adobe Firefly, featuring the character, devices, and surrounding environment. Photoshop was used to mock up the UI screens and enhance lighting and color details to emphasize the main subject, while Figma supported the overall interface design integration.",
+    },
     { src: asset("work-3.png"), alt: "Portfolio work 3" },
   ],
 };

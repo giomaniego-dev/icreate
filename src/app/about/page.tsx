@@ -4,7 +4,7 @@ import { AboutHero } from "@/components/AboutHero";
 import { AboutTeamSection } from "@/components/AboutTeamSection";
 
 const ABOUT_DESCRIPTION =
-  "\"Developing an Interactive Website of Collaboration Between Graphic Designers and AI in Design Workflow\" is a capstone research project that explores how designers integrate AI into modern graphic design and how human creativity continues to guide the final outcome. The project ultimately aims to clarify AI's role as a supportive tool, promote transparency, and encourage responsible, informed engagement with emerging creative technologies.";
+  `"Showcasing the Collaborative Creative Process of Graphic Designers and A.I." is a capstone research project that explores how designers integrate AI into modern graphic design and how human creativity continues to guide the final outcome. The project ultimately aims to clarify AI’s role as a supportive tool, promote transparency, and encourage responsible, informed engagement with emerging creative technologies.`;
 
 export const metadata: Metadata = {
   title: "About | iCreate",

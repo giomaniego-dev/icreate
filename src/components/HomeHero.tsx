@@ -21,8 +21,8 @@ export function HomeHero() {
 
       <HeroShell>
         <div className="flex flex-1 items-center pb-16 pt-4 md:pb-20 md:pt-6">
-          <div className="box-border w-full pl-8 pr-6 sm:pl-[10%] sm:pr-10 md:w-1/2 md:pl-[10%] md:pr-12 lg:pl-[12%] lg:pr-16">
-            <h1 className="font-display text-[2.625rem] font-normal leading-[1.05] tracking-tight text-white sm:text-5xl md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem]">
+          <div className="box-border w-full pl-8 pr-6 sm:pl-[10%] sm:pr-10 md:w-[60%] md:pl-[10%] md:pr-12 lg:w-[55%] lg:pl-[12%] lg:pr-16">
+            <h1 className="font-display text-[2.625rem] font-extrabold leading-[1.08] tracking-tight text-white whitespace-nowrap sm:text-5xl md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5.25rem]">
               <span className="block">Inside the</span>
               <span className="block" style={{ color: HERO_ACCENT }}>
                 Designer-AI
@@ -36,7 +36,7 @@ export function HomeHero() {
             </p>
 
             <Link
-              href="/article"
+              href="/artists"
               className="mt-7 inline-flex items-center justify-center rounded-xl px-7 py-3.5 font-sans text-base font-bold text-[#1A1A1A] transition hover:opacity-95 sm:mt-8 md:mt-9 md:px-8 md:py-4"
               style={{
                 backgroundColor: HERO_ACCENT,

@@ -34,10 +34,10 @@ export function Footer() {
                   Home
                 </Link>
                 <Link
-                  href="/about"
+                  href="/artists"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
-                  About
+                  Artist
                 </Link>
                 <Link
                   href="/quiz"
@@ -54,18 +54,10 @@ export function Footer() {
               </h3>
               <nav className="flex flex-col gap-3">
                 <Link
-                  href="/artists"
+                  href="/about"
                   className="font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
-                  Profiles
-                </Link>
-              </nav>
-              <nav className="flex flex-col gap-3">
-                <Link
-                  href="/article"
-                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
-                >
-                  Article
+                  About
                 </Link>
               </nav>
             </div>

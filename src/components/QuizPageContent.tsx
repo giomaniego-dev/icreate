@@ -22,38 +22,39 @@ export function QuizPageContent() {
         {view === "landing" ? (
           <PageContainer
             size="content"
-            className="flex flex-1 flex-col items-center justify-center px-0 pb-16 pt-4 md:pb-20"
+            className="flex flex-1 flex-col items-center justify-center px-4 pb-16 pt-4 md:pb-20"
           >
-            <div className="flex w-full flex-col items-center gap-10 md:flex-row md:items-center md:justify-between md:gap-10 lg:gap-14">
+            <div className="flex w-full flex-col items-center gap-8 md:flex-row md:items-center md:gap-10 lg:gap-14">
               <div
-                className="flex shrink-0 items-center justify-center overflow-hidden rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8"
+                className="flex shrink-0 items-end justify-center overflow-hidden rounded-2xl px-6 pt-6 sm:px-8 sm:pt-8 md:px-10 md:pt-10"
                 style={{ background: QUIZ_CTA_GRADIENT }}
               >
                 <Image
-                  src="/images/robot.svg"
+                  src="/images/smile-bot.svg"
                   alt=""
-                  width={420}
-                  height={271}
-                  className="h-auto w-[200px] sm:w-[220px] md:w-[260px] lg:w-[300px]"
+                  width={400}
+                  height={400}
+                  className="h-auto w-[180px] sm:w-[200px] md:w-[240px] lg:w-[280px]"
                 />
               </div>
 
               <div className="flex min-w-0 flex-1 flex-col items-center text-center md:items-end md:text-right">
-                <h1 className="font-display text-[2rem] font-bold leading-[1.05] text-white sm:text-[2.35rem] md:text-[2.5rem] lg:text-[3rem]">
-                  Put Your AI Skills to the Test
+                <h1 className="font-display text-[2rem] font-bold leading-[1.1] text-white sm:text-[2.35rem] md:text-[2.6rem] lg:text-[3.2rem]">
+                  Put Your AI Skills
+                  <br />
+                  to the Test
                 </h1>
-                <p className="mt-3 max-w-md font-sans text-base font-normal leading-[1.2] text-white sm:mt-4 sm:text-lg md:text-[1.15rem] lg:text-[1.35rem]">
+                <p className="mt-4 max-w-sm font-sans text-base font-normal leading-[1.4] text-white/90 sm:text-lg md:text-[1.1rem] lg:text-[1.25rem]">
                   Find out how ready you are to integrate AI into your design
                   process
                 </p>
                 <button
                   type="button"
                   onClick={() => setView("quiz")}
-                  className="mt-6 inline-flex w-fit items-center justify-center rounded-xl px-9 py-3.5 font-sans text-base font-bold uppercase tracking-wide text-[#1A1A1A] transition hover:opacity-95 md:mt-8"
+                  className="mt-6 inline-flex w-fit items-center justify-center rounded-lg px-10 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[#1A1A1A] transition hover:opacity-90 md:mt-8"
                   style={{
                     background: QUIZ_CTA_GRADIENT,
-                    boxShadow:
-                      "0 6px 12px -2px rgba(0,0,0,0.35), 0 12px 24px -6px rgba(0,0,0,0.5)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
                   Start

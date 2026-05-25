@@ -30,10 +30,12 @@ export const jeanProfileContent: ArtistProfileContent = {
     {
       name: "Adobe Firefly",
       icon: asset("firefly.png"),
+      url: "https://firefly.adobe.com/",
     },
     {
       name: "Magnific",
       icon: asset("magnific.png"),
+      url: "https://magnific.ai/",
     },
   ],
   skills: [
@@ -64,8 +66,8 @@ export const jeanProfileContent: ArtistProfileContent = {
     },
   ],
   works: [
-    { src: asset("work-1.png"), alt: "Portfolio work 1" },
+    { src: asset("jean-1.png"), alt: "Portfolio work 1" },
     { src: asset("work-2.png"), alt: "Portfolio work 2" },
-    { src: asset("work-3.png"), alt: "Portfolio work 3" },
+    { src: asset("jean-3.png"), alt: "Portfolio work 3" },
   ],
 };

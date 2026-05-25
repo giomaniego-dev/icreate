@@ -17,6 +17,7 @@ export type ArtistTool = {
   name: string;
   icon: string;
   iconAlt?: string;
+  url?: string;
 };
 
 export type ArtistProcessStep = {
@@ -28,6 +29,7 @@ export type ArtistProcessStep = {
 export type ArtistWork = {
   src: string;
   alt?: string;
+  description?: string;
 };
 
 /** `featured` = tall left image + two stacked banners on the right. */

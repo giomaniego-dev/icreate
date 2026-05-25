@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
 import { ConditionalFooter } from "@/components/ConditionalFooter";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${archivoBlack.variable}`}>
       <body className="antialiased font-sans">
+        <LoadingScreen />
         {children}
         <ConditionalFooter />
       </body>

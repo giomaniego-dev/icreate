@@ -24,17 +24,17 @@ export function AboutHero({
           priority
         />
         <div
-          className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/30"
+          className="absolute inset-0 bg-linear-to-r from-black/40 via-black/25 to-black/10"
           aria-hidden
         />
       </div>
 
       <HeroShell fullHeight={false}>
-        <div className="px-8 pb-20 pt-4 md:px-12 md:pb-24 md:pt-6 lg:px-40">
+        <div className="px-8 pb-28 pt-10 md:px-12 md:pb-32 md:pt-14 lg:px-40">
           <h1 className="font-display text-5xl font-normal tracking-wide text-white md:text-6xl">
             {title}
           </h1>
-          <p className="mt-8 max-w-5xl font-sans text-base leading-[1.65] text-white/95 md:text-[29px] md:leading-[1.45]">
+          <p className="mt-8 font-sans text-[20px] font-medium leading-[1.65] text-white/95">
             {description}
           </p>
         </div>

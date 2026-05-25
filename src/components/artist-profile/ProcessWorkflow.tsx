@@ -49,7 +49,7 @@ export function ProcessWorkflow({ steps }: ProcessWorkflowProps) {
               <p className="mb-3 min-h-[2.5rem] max-w-[7rem] text-center font-sans text-[0.6875rem] font-medium leading-tight text-black md:mb-3.5 md:min-h-[2.75rem] md:text-xs">
                 {step.label}
               </p>
-              <div className="flex h-[3.75rem] w-[3.75rem] items-center justify-center md:h-16 md:w-16">
+              <div className="flex h-[3.75rem] w-[3.75rem] items-center justify-center transition-transform duration-200 ease-out hover:scale-115 md:h-16 md:w-16">
                 <Image
                   src={step.icon}
                   alt={step.iconAlt ?? step.label}
@@ -90,7 +90,7 @@ export function ProcessWorkflow({ steps }: ProcessWorkflowProps) {
               <p className="mb-2 min-h-[2.25rem] text-center font-sans text-[0.6875rem] font-medium leading-tight text-black sm:text-xs">
                 {step.label}
               </p>
-              <div className="flex h-14 w-14 items-center justify-center sm:h-[3.75rem] sm:w-[3.75rem]">
+              <div className="flex h-14 w-14 items-center justify-center transition-transform duration-200 ease-out hover:scale-115 sm:h-[3.75rem] sm:w-[3.75rem]">
                 <Image
                   src={step.icon}
                   alt={step.iconAlt ?? step.label}

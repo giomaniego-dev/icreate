@@ -23,20 +23,35 @@ export function ProfileToolsPanel({
             : "mt-5 flex flex-1 flex-wrap items-center justify-center gap-5 sm:mt-6 md:mt-7 md:gap-6"
         }
       >
-        {tools.map((tool) => (
-          <div
-            key={tool.name}
-            className="flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:h-14 sm:w-14 md:h-[3.75rem] md:w-[3.75rem]"
-          >
-            <Image
-              src={tool.icon}
-              alt={tool.iconAlt ?? tool.name}
-              width={80}
-              height={80}
-              className="h-full w-full object-contain"
-            />
-          </div>
-        ))}
+        {tools.map((tool) => {
+          const icon = (
+            <div
+              className="flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:h-14 sm:w-14 md:h-[3.75rem] md:w-[3.75rem]"
+            >
+              <Image
+                src={tool.icon}
+                alt={tool.iconAlt ?? tool.name}
+                width={80}
+                height={80}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          );
+
+          return tool.url ? (
+            <a
+              key={tool.name}
+              href={tool.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={tool.name}
+            >
+              {icon}
+            </a>
+          ) : (
+            <div key={tool.name}>{icon}</div>
+          );
+        })}
       </div>
     </ProfilePanel>
   );
