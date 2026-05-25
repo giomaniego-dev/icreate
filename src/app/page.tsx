@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomeHero } from "@/components/HomeHero";
+import { HomeLanding } from "@/components/HomeLanding";
 
 export const metadata: Metadata = {
   title: "iCreate",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeHero />;
+  return <HomeLanding />;
 }

@@ -18,7 +18,7 @@ export function DesignerProfileCard({ profile }: DesignerProfileCardProps) {
         style={{ background: PROFILE_GRADIENT }}
       >
         {/* Portrait — plain image, no blend/scale tricks */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-[calc(100%+5.5rem)] w-[42%] sm:w-[40%] md:h-[calc(100%+6.25rem)] md:w-[38%] lg:w-[36%]">
+        <div className="pointer-events-none absolute bottom-0 left-3.5 z-20 h-[calc(100%+5.5rem)] w-[38%] sm:w-[36%] md:left-4 md:h-[calc(100%+6.25rem)] md:w-[34%] lg:w-[32%]">
           <div className="relative h-full w-full">
             <Image
               src={profile.portrait}
