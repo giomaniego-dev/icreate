@@ -87,7 +87,7 @@ export const chardaneProfileContent: ArtistProfileContent = {
     },
     {
       label: "Asset Generation",
-      icon: asset("asset.png"),
+      icon: asset("generation.png"),
       modalTitle: "ASSET GENERATION & WORKFLOW ASSISTANCE",
       modalDescription:
         "Comes next as she utilizes tools such as Adobe Firefly, Bannerflow, and Adobe Photoshop Generative Fill to generate culturally specific assets, modify visuals, automate repetitive banner resizing tasks, and correct flaws in generated outputs to speed up the production process.",

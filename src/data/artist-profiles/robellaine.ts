@@ -62,7 +62,7 @@ export const robellaineProfileContent: ArtistProfileContent = {
     },
     {
       label: "Visual Generation",
-      icon: asset("asset.png"),
+      icon: asset("generation.png"),
       modalTitle: "AI VISUAL GENERATION & REFERENCE ENHANCEMENT",
       modalDescription:
         "She uses Magnific AI (formerly Freepik-related tools) along with Canva AI to generate, enhance, or refine visual references that support her design direction. These tools help her transform concepts into visual materials and provide additional design variations that assist in faster decision-making and execution.",
