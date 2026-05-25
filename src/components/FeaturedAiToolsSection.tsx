@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 type ToolCard = {
@@ -158,14 +157,13 @@ export function FeaturedAiToolsSection() {
         <div className="mx-auto mt-6 max-w-6xl rounded-[20px] bg-[#F5F5F5] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6 md:px-8">
           <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2">
             {featuredAiTools.map((tool) => (
-              <Link
+              <button
                 key={tool.id}
-                href="#"
+                type="button"
                 aria-label={tool.title ?? `${tool.id} card`}
-                className="group block h-full"
-                onClick={(event) => {
+                className="group block h-full text-left"
+                onClick={() => {
                   if (!tool.previewImage) {
-                    event.preventDefault();
                     setActiveTipCard((previous) =>
                       previous === tool.id ? null : tool.id,
                     );
@@ -181,7 +179,7 @@ export function FeaturedAiToolsSection() {
                     →
                   </span>
                 </div>
-              </Link>
+              </button>
             ))}
           </div>
         </div>

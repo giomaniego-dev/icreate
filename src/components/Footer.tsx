@@ -1,13 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useNavigate } from "@/context/ViewContext";
 
 export function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-[#000000]">
       <div className="mx-auto w-full max-w-[90rem] px-8 py-12 md:px-12 lg:px-16">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex flex-col items-start">
-            <Link href="/" className="w-fit -ml-5 -mb-3">
+            <button type="button" onClick={() => navigate("home")} className="w-fit -ml-5 -mb-3">
               <Image
                 src="/images/logo.svg"
                 alt="iCREATE"
@@ -15,7 +19,7 @@ export function Footer() {
                 height={77}
                 className="h-14 w-auto"
               />
-            </Link>
+            </button>
             <p className="font-sans text-[24px] font-normal text-white">
               Art & Human-AI Collaboration
             </p>
@@ -27,24 +31,27 @@ export function Footer() {
                 Links
               </h3>
               <nav className="flex flex-col gap-3">
-                <Link
-                  href="/"
-                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
+                <button
+                  type="button"
+                  onClick={() => navigate("home")}
+                  className="text-left font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Home
-                </Link>
-                <Link
-                  href="/artists"
-                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigate("artists")}
+                  className="text-left font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Artist
-                </Link>
-                <Link
-                  href="/quiz"
-                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigate("quiz")}
+                  className="text-left font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   Quiz
-                </Link>
+                </button>
               </nav>
             </div>
 
@@ -53,12 +60,13 @@ export function Footer() {
                 Information
               </h3>
               <nav className="flex flex-col gap-3">
-                <Link
-                  href="/about"
-                  className="font-sans text-sm text-white transition hover:text-white md:text-base"
+                <button
+                  type="button"
+                  onClick={() => navigate("about")}
+                  className="text-left font-sans text-sm text-white transition hover:text-white md:text-base"
                 >
                   About
-                </Link>
+                </button>
               </nav>
             </div>
           </div>

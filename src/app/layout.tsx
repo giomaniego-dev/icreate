@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
-import { ConditionalFooter } from "@/components/ConditionalFooter";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import "./globals.css";
 
@@ -19,7 +18,8 @@ const archivoBlack = Archivo_Black({
 
 export const metadata: Metadata = {
   title: "iCreate",
-  description: "Built with Next.js",
+  description:
+    "Explore interactive workflows, creative processes, and real-world designer–AI collaboration in graphic design.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,6 @@ export default function RootLayout({
       <body className="antialiased font-sans">
         <LoadingScreen />
         {children}
-        <ConditionalFooter />
       </body>
     </html>
   );

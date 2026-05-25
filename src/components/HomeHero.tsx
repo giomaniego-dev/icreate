@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useNavigate } from "@/context/ViewContext";
 import { HeroShell } from "@/components/layout/HeroShell";
 
 const HERO_ACCENT = "#F9A825";
 
 export function HomeHero() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0" aria-hidden>
@@ -35,8 +39,9 @@ export function HomeHero() {
               designer–AI collaboration in graphic design.
             </p>
 
-            <Link
-              href="/artists"
+            <button
+              type="button"
+              onClick={() => navigate("artists")}
               className="mt-7 inline-flex items-center justify-center rounded-xl px-7 py-3.5 font-sans text-base font-bold text-[#1A1A1A] transition hover:opacity-95 sm:mt-8 md:mt-9 md:px-8 md:py-4"
               style={{
                 backgroundColor: HERO_ACCENT,
@@ -44,7 +49,7 @@ export function HomeHero() {
               }}
             >
               Explore Process
-            </Link>
+            </button>
           </div>
         </div>
       </HeroShell>

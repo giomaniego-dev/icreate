@@ -32,12 +32,12 @@ const articles = {
   },
 } as const;
 
-type View = keyof typeof articles;
+type ArticleView = keyof typeof articles;
 
 export function ArticleViewer() {
-  const [view, setView] = useState<View>("first");
+  const [view, setView] = useState<ArticleView>("first");
 
-  const switchTo = (next: View) => {
+  const switchTo = (next: ArticleView) => {
     setView(next);
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });

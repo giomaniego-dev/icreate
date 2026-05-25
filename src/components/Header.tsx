@@ -1,24 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useView, useNavigate, type View } from "@/context/ViewContext";
 import { PageContainer } from "./layout/PageContainer";
 
-const navLinks = [
-  { href: "/", label: "HOME", match: (path: string) => path === "/" },
-  {
-    href: "/artists",
-    label: "ARTISTS",
-    match: (path: string) => path === "/artists",
-  },
-  { href: "/quiz", label: "QUIZ", match: (path: string) => path === "/quiz" },
-  {
-    href: "/about",
-    label: "ABOUT",
-    match: (path: string) => path === "/about",
-  },
-] as const;
+const navLinks: { view: View; label: string }[] = [
+  { view: "home", label: "HOME" },
+  { view: "artists", label: "ARTISTS" },
+  { view: "quiz", label: "QUIZ" },
+  { view: "about", label: "ABOUT" },
+];
 
 export type HeaderVariant = "overlay" | "profile";
 
@@ -30,7 +21,8 @@ const navLinkBase =
   "rounded-full px-4 py-1.5 font-sans text-sm font-semibold uppercase tracking-[0.12em] text-white transition sm:px-5 sm:py-2";
 
 export function Header({ variant = "overlay" }: HeaderProps) {
-  const pathname = usePathname();
+  const currentView = useView();
+  const navigate = useNavigate();
   const isProfile = variant === "profile";
 
   const shellClass = isProfile
@@ -61,7 +53,7 @@ export function Header({ variant = "overlay" }: HeaderProps) {
           className={shellClass}
           style={shellStyle}
         >
-        <Link href="/" className="shrink-0">
+        <button type="button" onClick={() => navigate("home")} className="shrink-0">
           <Image
             src="/images/logo.svg"
             alt="iCREATE"
@@ -70,20 +62,21 @@ export function Header({ variant = "overlay" }: HeaderProps) {
             className="h-9 w-auto sm:h-10 md:h-11"
             priority
           />
-        </Link>
+        </button>
 
         <nav className="flex items-center gap-3 sm:gap-5 md:gap-7">
-          {navLinks.map(({ href, label, match }) => {
-            const isActive = match(pathname);
+          {navLinks.map(({ view, label }) => {
+            const isActive = currentView === view;
 
             return (
-              <Link
-                key={href}
-                href={href}
+              <button
+                key={view}
+                type="button"
+                onClick={() => navigate(view)}
                 className={isActive ? activeClass : inactiveClass}
               >
                 {label}
-              </Link>
+              </button>
             );
           })}
         </nav>

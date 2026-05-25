@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "@/context/ViewContext";
 
 const slides = [
   {
@@ -21,6 +22,7 @@ const slides = [
 
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const goNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % slides.length);
@@ -33,7 +35,6 @@ export function HeroCarousel() {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -41,7 +42,6 @@ export function HeroCarousel() {
             index === activeIndex ? "z-10 opacity-100" : "z-0 opacity-0"
           }`}
         >
-          {/* Background image */}
           <div className="absolute inset-0">
             <Image
               src={slide.backgroundImage}
@@ -51,14 +51,12 @@ export function HeroCarousel() {
               sizes="100vw"
               priority={index === 0}
             />
-            {/* Dark overlay */}
             <div
               className="absolute inset-0 bg-black/60"
               aria-hidden
             />
           </div>
 
-          {/* Content */}
           <div className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 pb-20 md:px-12 lg:max-w-6xl lg:px-40">
             <h1 className="flex min-h-36 flex-col font-display text-4xl font-normal leading-tight text-white md:min-h-46 md:text-5xl lg:min-h-57 lg:text-6xl">
               {slide.headline.map((line, i) => (
@@ -70,8 +68,9 @@ export function HeroCarousel() {
             <p className="mt-6 min-h-14 max-w-xl font-sans text-lg text-white/95 md:min-h-16 md:text-xl">
               {slide.subheadline}
             </p>
-            <a
-              href="/article"
+            <button
+              type="button"
+              onClick={() => navigate("article")}
               className="mt-8 inline-flex w-fit items-center justify-center rounded-2xl px-8 py-4 font-sans text-base font-bold text-black transition hover:opacity-95"
               style={{
                 background: "linear-gradient(to right, #F6D26D 0%, #FF9114 100%)",
@@ -80,7 +79,7 @@ export function HeroCarousel() {
               }}
             >
               Learn More
-            </a>
+            </button>
           </div>
         </div>
       ))}
