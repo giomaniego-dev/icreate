@@ -12,7 +12,7 @@ type ViewContextValue = {
 const ViewContext = createContext<ViewContextValue | null>(null);
 
 export function ViewProvider({ children }: { children: ReactNode }) {
-  const [view, setView] = useState<View>("artists");
+  const [view, setView] = useState<View>("home");
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
